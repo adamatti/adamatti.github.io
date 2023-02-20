@@ -1,3 +1,5 @@
+import './globals.sass'
+
 export default function RootLayout({
   children,
 }: {
