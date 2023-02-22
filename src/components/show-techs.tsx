@@ -17,8 +17,9 @@ function TechCard({ tech: t }: { tech: Technology }): ReactElement {
 
 export default function ShowTechs({ items, filters = true }: { items: Technology[]; filters: boolean }): ReactElement {
   const tags = ['loved', 'language', 'database', 'tool', 'broker', 'frontend'];
-  const [filtered, setFiltered] = useState(items.filter((i) => i.tags.includes('loved')));
-  const [filterSelected, setFilterSelected] = useState('loved');
+  // const defaultItems = items.filter((i) => i.tags.includes('loved'));
+  const [filtered, setFiltered] = useState(items);
+  const [filterSelected, setFilterSelected] = useState('all');
 
   function FilterButton({ label, isShowAll = false }: { label: string; isShowAll: boolean }): ReactElement {
     const buttonClass = 'hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded';

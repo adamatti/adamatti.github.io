@@ -27,6 +27,8 @@
   ],
   "rules": {
     "@next/next/no-img-element": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
     "jsx-a11y/alt-text": "off",
     "react/no-unescaped-entities": "off",
 

@@ -13,7 +13,7 @@ clean-hard: clean
 install: ## install dependencies
 	@yarn --silent install
 
-run-dev: clean build ## run as dev
+run-dev: ## run as dev
 	@yarn --silent dev
 
 lint: ## lint

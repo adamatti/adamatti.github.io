@@ -1,26 +1,15 @@
 import { type ReactElement } from 'react';
 import ShowTechs from '~/components/show-techs';
 import { type Technology } from '../../types';
-
-/**
- * FIXME extract shared logic to a new file
- */
-const getItems = async (): Promise<Technology[]> => {
-  const query = `query { 
-    items:allTeches(sortField: "since", sortOrder: "desc") {
-      id name color image tags since
-    }
-  }`;
-
-  const headers = { 'Content-Type': 'application/json' };
-  const url = 'http://localhost:3000/';
-  const response = await fetch(url, { method: 'POST', headers, body: JSON.stringify({ query }) });
-  const json = await response.json();
-  return json.data.items;
-};
+import { query } from '~/server/graphql';
 
 export async function getStaticProps(): Promise<{ props: { items: Technology[] } }> {
-  const items = await getItems();
+  const q = `items:allTeches(sortField: "since", sortOrder: "desc") {
+    id name color image tags since
+  }`;
+
+  const { items } = await query(q);
+
   return {
     props: {
       items,

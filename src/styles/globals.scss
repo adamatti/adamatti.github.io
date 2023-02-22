@@ -6,8 +6,8 @@
   @apply text-cyan-400
 }
 
-a {
-  @apply hover:underline hover:text-cyan-400
+a, .link {
+  @apply hover:underline text-cyan-400 hover:text-cyan-600
 }
 
 .section-title {
