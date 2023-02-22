@@ -1,8 +1,12 @@
-/** 
+import { type ReactElement } from 'react';
+
+/**
  * FIXME research why dynamic colors are not working without it
-*/
-function TagWithAllColors() {
-  return <div className="hidden
+ */
+function TagWithAllColors(): ReactElement {
+  return (
+    <div
+      className="hidden
   shadow-amber-300
   shadow-black
   shadow-blue-500
@@ -29,11 +33,15 @@ function TagWithAllColors() {
   shadow-rose-600
   shadow-sky-400
   shadow-sky-600
-  shadow-zinc-700"></div>
+  shadow-zinc-700"
+    ></div>
+  );
 }
 
-export default function TailwindHacks() {
-  return <>
-    <TagWithAllColors />
-  </>
+export default function TailwindHacks(): ReactElement {
+  return (
+    <>
+      <TagWithAllColors />
+    </>
+  );
 }

@@ -1,6 +1,8 @@
-const title = "Marcelo Adamatti Portfolio";
+import { type ReactElement } from 'react';
 
-export default function Head() {
+const title = 'Marcelo Adamatti Portfolio';
+
+export default function Head(): ReactElement {
   return (
     <>
       <title>{title}</title>
@@ -8,5 +10,5 @@ export default function Head() {
       <meta name="description" content={title} />
       <link rel="icon" href="/favicon.ico" />
     </>
-  )
+  );
 }
