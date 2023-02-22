@@ -39,11 +39,6 @@ export default function Footer(): ReactElement {
             <FaWhatsapp />
           </FooterLink>
         </div>
-        <div className="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <div>
-            <a href="https://tailwind-nextjs-starter-blog.vercel.app/blog">Theme Template</a>
-          </div>
-        </div>
       </div>
     </footer>
   );

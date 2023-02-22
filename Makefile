@@ -13,11 +13,17 @@ clean-hard: clean
 install: ## install dependencies
 	@yarn --silent install
 
-run-dev: ## run as dev
+run-dev: clean build ## run as dev
 	@yarn --silent dev
 
 lint: ## lint
-	@yarn --silent lint
+	@yarn --silent lint --fix
 
-build: clean ## build
+build-only:
 	@yarn --silent build
+
+build: clean build-only ## build
+	
+.PHONY: graphql-server
+graphql-server: ## Run graphql server (required by local dev / build)
+	@yarn --silent server

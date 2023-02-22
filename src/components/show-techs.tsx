@@ -1,7 +1,7 @@
 'use client';
 import { type ReactElement, useState } from 'react';
 import hdate from 'human-date';
-import { type Technology } from '~/app/types';
+import { type Technology } from '~/types';
 
 function TechCard({ tech: t }: { tech: Technology }): ReactElement {
   const color = `shadow-${t.color ?? 'black-500'}`;
@@ -17,9 +17,29 @@ function TechCard({ tech: t }: { tech: Technology }): ReactElement {
 
 export default function ShowTechs({ items, filters = true }: { items: Technology[]; filters: boolean }): ReactElement {
   const tags = ['loved', 'language', 'database', 'tool', 'broker', 'frontend'];
-  const [filtered, setFiltered] = useState(items);
-  const [filterSelected, setFilterSelected] = useState('all');
-  const buttonClass = 'hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded';
+  const [filtered, setFiltered] = useState(items.filter((i) => i.tags.includes('loved')));
+  const [filterSelected, setFilterSelected] = useState('loved');
+
+  function FilterButton({ label, isShowAll = false }: { label: string; isShowAll: boolean }): ReactElement {
+    const buttonClass = 'hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded';
+
+    return (
+      <button
+        className={`${filterSelected === label ? 'bg-cyan-600' : 'bg-cyan-400'} ${buttonClass}`}
+        onClick={() => {
+          if (isShowAll) {
+            setFiltered(items);
+          } else {
+            setFiltered(items.filter((i) => i.tags.includes(label)));
+          }
+
+          setFilterSelected(label);
+        }}
+      >
+        {label}
+      </button>
+    );
+  }
 
   return (
     <>
@@ -27,27 +47,10 @@ export default function ShowTechs({ items, filters = true }: { items: Technology
         <div className="flex justify-between">
           <div></div>
           <div className="grid grid-cols-7 gap-1">
-            <button
-              onClick={() => {
-                setFiltered(items);
-                setFilterSelected('all');
-              }}
-              className={`${filterSelected === 'all' ? 'bg-cyan-600' : 'bg-cyan-400'} ${buttonClass}`}
-            >
-              all
-            </button>
+            <FilterButton key="all" label="all" isShowAll={true} />
 
             {tags.map((t) => (
-              <button
-                key={t}
-                className={`${filterSelected === t ? 'bg-cyan-600' : 'bg-cyan-400'} ${buttonClass}`}
-                onClick={() => {
-                  setFiltered(items.filter((i) => i.tags.includes(t)));
-                  setFilterSelected(t);
-                }}
-              >
-                {t}
-              </button>
+              <FilterButton key={t} label={t} isShowAll={false} />
             ))}
           </div>
         </div>

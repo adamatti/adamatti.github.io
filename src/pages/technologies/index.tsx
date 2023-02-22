@@ -1,14 +1,14 @@
 import { type ReactElement } from 'react';
 import ShowTechs from '~/components/show-techs';
-import { type Technology } from '../types';
+import { type Technology } from '../../types';
 
 /**
  * FIXME extract shared logic to a new file
  */
 const getItems = async (): Promise<Technology[]> => {
   const query = `query { 
-    allTeches(sortField: "since", sortOrder: "desc") {
-      name color image tags since
+    items:allTeches(sortField: "since", sortOrder: "desc") {
+      id name color image tags since
     }
   }`;
 
@@ -16,11 +16,19 @@ const getItems = async (): Promise<Technology[]> => {
   const url = 'http://localhost:3000/';
   const response = await fetch(url, { method: 'POST', headers, body: JSON.stringify({ query }) });
   const json = await response.json();
-  return json.data.allTeches;
+  return json.data.items;
 };
 
-export default async function TechPage(): Promise<ReactElement> {
+export async function getStaticProps(): Promise<{ props: { items: Technology[] } }> {
   const items = await getItems();
+  return {
+    props: {
+      items,
+    },
+  };
+}
+
+export default function TechPage({ items }: { items: Technology[] }): ReactElement {
   return (
     <>
       <div className="w-full h-auto">
