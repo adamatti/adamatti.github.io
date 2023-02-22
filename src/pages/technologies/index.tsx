@@ -24,8 +24,9 @@ export default function TechPage({ items }: { items: Technology[] }): ReactEleme
         <div className="mx-auto p-4 flex flex-col justify-center w-auto h-auto">
           <div>
             <p className="text-4xl font-bold inline">Experience</p>
-            <div className="flex justify-between">
-              <p className="py-5">These are the technologies I have worked with:</p>
+            <div className="py-5">
+              <p>These are the technologies I have worked with. </p>
+              <p>Frameworks (e.g. express, ktor, spring), tecniques (e.g. TDD, BDD, Microservices, Event Sourcing), methodologies (e.g. kanban, scrum) aren't listed here</p>
             </div>
           </div>
           <ShowTechs items={items} filters={true} />
