@@ -1,7 +1,13 @@
+import AboutMeSection from "~/components/about-me-section";
+import HightlightsSection from "~/components/hightlights-section";
+import TechStackSection from "~/components/tech-stack-section";
+
 export default function Home() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <>
+      <AboutMeSection />
+      <HightlightsSection />
+      <TechStackSection />
+    </>
   )
 }

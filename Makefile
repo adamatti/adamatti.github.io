@@ -18,3 +18,6 @@ run-dev: ## run as dev
 
 lint: ## lint
 	@yarn --silent lint
+
+build: clean ## build
+	@yarn --silent build

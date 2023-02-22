@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.color {
+  @apply text-cyan-400
+}
+
+a {
+  @apply hover:underline hover:text-cyan-400
+}
+
+.section-title {
+  @apply mb-6 text-2xl font-bold text-center
+}
+
+.section-text {
+  @apply text-sm mt-3 leading-8
+}

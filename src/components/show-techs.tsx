@@ -1,0 +1,46 @@
+"use client"
+import { useState } from "react";
+import hdate from 'human-date';
+import { Technology } from "~/app/types";
+
+function TechCard ({tech: t}: {tech: Technology}) {
+  const color = `shadow-${t.color ?? 'black-500'}`;
+
+  return (<div className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${color}`}>
+    <img className="w-20 mx-auto" src={`icons/${t.image}`}/>
+    <p className="mt-4 capitalize">{t.name}</p>
+    <p>{hdate.relativeTime(t.since)}</p>
+  </div>)
+}
+
+
+export default function ShowTechs({items, filters = true}: {items: Technology[], filters: boolean}) {
+  const tags= ['loved', 'language', 'database', 'tool', 'broker', 'frontend'];
+  const [filtered, setFiltered] = useState(items);
+  const [filterSelected, setFilterSelected] = useState('all');
+  const buttonClass="hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded";
+
+  return (
+    <>
+      {filters && <div className="flex justify-between">
+        <div></div>
+        <div className="grid grid-cols-7 gap-1">
+            <button onClick={() => {
+              setFiltered(items);
+              setFilterSelected('all')
+            }} className={`${filterSelected === 'all' ? 'bg-cyan-600' : 'bg-cyan-400'} ${buttonClass}`}>all</button>
+
+            {tags.map(t => <button key={t} 
+              className={`${filterSelected === t ? 'bg-cyan-600' : 'bg-cyan-400'} ${buttonClass}`}              
+              onClick={() => {
+                setFiltered(items.filter(i => i.tags.includes(t)));
+                setFilterSelected(t);
+              }}>{t}
+              </button>)}
+          </div>
+      </div>}
+      <div className="w-auto grid grid-cols-2 sm:grid-cols-5 gap-8 text-center py-8 px-12 sm:px-0">
+        {filtered?.map(i => <TechCard key={i.id} tech={i}/>)}
+      </div>
+    </>)
+}
