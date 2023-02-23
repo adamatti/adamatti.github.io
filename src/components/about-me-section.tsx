@@ -1,5 +1,5 @@
 import Color from './color';
-import avatar from '../../public/avatar.png';
+import avatar from '../../public/assets/avatar.png';
 import Link from 'next/link';
 import { type ReactElement } from 'react';
 import Image from './next-custom/image';
