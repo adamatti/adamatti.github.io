@@ -1,7 +1,7 @@
-import { ReactElement } from 'react';
+import { type ReactElement } from 'react';
 import { ShowJobs } from '~/components/jobs/show-jobs';
 import { query } from '~/server/graphql';
-import { Job } from '~/types';
+import { type Job } from '~/types';
 
 export async function getStaticProps(): Promise<{ props: { jobs: Job[] } }> {
   const q = `

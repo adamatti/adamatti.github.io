@@ -32,6 +32,9 @@ build-prod: clean
 	@cd ../page-react-deploy; make clean
 	@cp -R out/* ../page-react-deploy
 
+release: build-prod
+	@cd ../page-react-deploy; make deploy
+
 .PHONY: graphql-server
 graphql-server: ## Run graphql server (required by local dev / build)
 	@yarn --silent server

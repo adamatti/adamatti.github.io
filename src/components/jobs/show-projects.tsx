@@ -1,5 +1,5 @@
-import { ReactElement } from 'react';
-import { Job, Project } from '~/types';
+import { type ReactElement } from 'react';
+import { type Job, type Project } from '~/types';
 
 export default function ShowProjects({ job }: { job: Job }): ReactElement {
   if (!job.projects || job.projects.length === 0) {

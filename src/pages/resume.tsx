@@ -1,4 +1,3 @@
-import Image from '~/components/next-custom/image';
 import Link from 'next/link';
 import { type ReactNode, type ReactElement } from 'react';
 import { type Job, type Technology } from '~/types';

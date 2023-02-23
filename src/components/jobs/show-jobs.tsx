@@ -1,5 +1,5 @@
-import { ReactElement } from 'react';
-import { Job } from '~/types';
+import { type ReactElement } from 'react';
+import { type Job } from '~/types';
 import { format, parseISO, formatDistance } from 'date-fns';
 import CompanyLogos from './company-logos';
 import ShowProjects from './show-projects';

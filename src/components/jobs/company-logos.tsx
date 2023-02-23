@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { ReactElement } from 'react';
-import { Company, Job } from '~/types';
+import { type ReactElement } from 'react';
+import { type Company, type Job } from '~/types';
 import Image from '../next-custom/image';
 
 export default function CompanyLogos({ job }: { job: Job }): ReactElement {
