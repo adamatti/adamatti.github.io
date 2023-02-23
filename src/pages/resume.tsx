@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from '~/components/next-custom/image';
 import Link from 'next/link';
 import { type ReactNode, type ReactElement } from 'react';
 import { type Company, type Job, type Project, type Technology } from '~/types';

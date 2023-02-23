@@ -2,7 +2,7 @@
 import { type ReactElement, useState } from 'react';
 import hdate from 'human-date';
 import { type Technology } from '~/types';
-import Image from 'next/image';
+import Image from './next-custom/image';
 
 function TechCard({ tech: t }: { tech: Technology }): ReactElement {
   // FIXME it shouldn't be required

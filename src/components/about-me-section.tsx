@@ -1,8 +1,8 @@
 import Color from './color';
 import avatar from '../../public/avatar.png';
-import Image from 'next/image';
 import Link from 'next/link';
 import { type ReactElement } from 'react';
+import Image from './next-custom/image';
 
 function SocialLink({ href, icon }: { href: string; icon: string }): ReactElement {
   // FIXME it shouldn't be required
