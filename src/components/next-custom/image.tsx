@@ -1,5 +1,5 @@
 import { type ReactElement } from 'react';
-import ReactImage, { type ImageProps } from 'next/image';
+import ReactImage, { type ImageProps } from 'next/legacy/image';
 
 export default function Image(props: ImageProps): ReactElement {
   const { loading, src, ...imageProps } = props;

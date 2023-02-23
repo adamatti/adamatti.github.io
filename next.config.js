@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  reactStrictMode: true,
   assetPrefix: process.env.BASE_PATH,
   basePath: process.env.BASE_PATH,
 
@@ -21,6 +22,9 @@ const nextConfig = {
     }
 
     return config;
+  },
+  env: {
+    nodeEnv: process.env.NODE_ENV ?? 'production',
   },
 };
 
