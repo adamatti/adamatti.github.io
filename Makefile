@@ -20,7 +20,7 @@ run-dev: ## run as dev
 lint: ## lint
 	@yarn --silent lint --fix
 
-build-only:
+build-only: lint
 	@yarn --silent build
 
 build: clean build-only ## build

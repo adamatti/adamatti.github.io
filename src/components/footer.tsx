@@ -1,11 +1,12 @@
+import Link from 'next/link';
 import { type ReactElement } from 'react';
 import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 
 function FooterLink(args: { href: string; children: React.ReactNode }): ReactElement {
   return (
-    <a className="text-xl text-gray-500 transition" target="_blank" rel="noopener noreferrer" href={args.href}>
+    <Link className="text-xl text-gray-500 transition" target="_blank" rel="noopener noreferrer" href={args.href}>
       {args.children}
-    </a>
+    </Link>
   );
 }
 

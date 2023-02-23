@@ -39,3 +39,12 @@ export interface Job {
 
   projects: Project[];
 }
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  summary: string;
+  dateString: string;
+  content: string;
+  tags: string[];
+}

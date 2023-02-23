@@ -6,6 +6,7 @@ import { query } from '../server/graphql';
 import { format, parseISO, formatDistance, compareAsc } from 'date-fns';
 import hdate from 'human-date';
 import ShowTechs from '~/components/show-techs';
+import PlainLink from '~/components/plain-link';
 
 export async function getStaticProps(): Promise<{ props: { jobs: Job[]; techs: Technology[] } }> {
   const q = `
@@ -260,14 +261,6 @@ function Section({ title, children }: { title: string; children?: ReactNode }): 
       <div className="text-2xl py-1">{title}</div>
       <div>{children}</div>
     </div>
-  );
-}
-
-function PlainLink({ href }: { href: string }): ReactElement {
-  return (
-    <Link href={href} target="_blank" className="link">
-      {href}
-    </Link>
   );
 }
 

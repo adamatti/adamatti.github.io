@@ -5,13 +5,11 @@ import { type Technology } from '~/types';
 import Image from './next-custom/image';
 
 function TechCard({ tech: t }: { tech: Technology }): ReactElement {
-  // FIXME it shouldn't be required
-  const basePath = process.env.BASE_PATH ?? '';
   const color = `shadow-${t.color ?? 'black-500'}`;
 
   return (
     <div className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${color}`}>
-      <Image className="mx-auto" src={`${basePath}/icons/${t.image}`} alt={t.name} width={80} height={80} />
+      <Image className="mx-auto" src={`/icons/${t.image}`} alt={t.name} width={80} height={80} />
       <p className="mt-4 capitalize">{t.name}</p>
       <p>{hdate.relativeTime(t.since).replaceAll(' ago', '')}</p>
     </div>
