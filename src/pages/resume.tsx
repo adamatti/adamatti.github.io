@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactNode, type ReactElement } from 'react';
+import { type ReactNode, type ReactElement } from 'react';
 import { type Company, type Job, type Project, type Technology } from '~/types';
 import { query } from '../server/graphql';
 import { format, parseISO, formatDistance, compareAsc } from 'date-fns';
@@ -263,7 +263,7 @@ function Section({ title, children }: { title: string; children?: ReactNode }): 
   );
 }
 
-function PlainLink({ href }: { href: string }) {
+function PlainLink({ href }: { href: string }): ReactElement {
   return (
     <Link href={href} target="_blank" className="link">
       {href}

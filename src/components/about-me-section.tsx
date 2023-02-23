@@ -4,10 +4,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { type ReactElement } from 'react';
 
-function SocialLink(args: { href: string; icon: string }): ReactElement {
+function SocialLink({ href, icon }: { href: string; icon: string }): ReactElement {
+  // FIXME it shouldn't be required
+  const basePath = process.env.BASE_PATH ?? '';
   return (
-    <a href={args.href} className="hover:no-underline" target="_blank" rel="noreferrer">
-      <img className="h-12 w-12 hover:translate-y-1" src={`/icons/${args.icon}.png`} loading="lazy" />
+    <a href={href} className="hover:no-underline" target="_blank" rel="noreferrer">
+      <Image className="hover:translate-y-1" src={`${basePath}/icons/${icon}.png`} width={48} height={48} alt={href} />
     </a>
   );
 }
