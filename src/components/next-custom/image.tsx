@@ -6,8 +6,8 @@ export default function Image(props: ImageProps): ReactElement {
   // FIXME it shouldn't be required
   const basePath = process.env.BASE_PATH ?? '';
   let newSrc = src;
-  if (basePath && typeof src === 'string' && src.startsWith('/')) {
-    newSrc = `${basePath}/${src}`;
+  if (basePath && typeof newSrc === 'string' && newSrc.startsWith('/')) {
+    newSrc = `${basePath}${newSrc}`;
   }
   return <ReactImage {...imageProps} loading="eager" src={newSrc} />;
 }
