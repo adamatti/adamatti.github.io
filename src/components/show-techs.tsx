@@ -10,7 +10,7 @@ function TechCard({ tech: t }: { tech: Technology }): ReactElement {
     <div className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${color}`}>
       <img className="w-20 mx-auto" src={`icons/${t.image}`} />
       <p className="mt-4 capitalize">{t.name}</p>
-      <p>{hdate.relativeTime(t.since)}</p>
+      <p>{hdate.relativeTime(t.since).replaceAll(' ago', '')}</p>
     </div>
   );
 }

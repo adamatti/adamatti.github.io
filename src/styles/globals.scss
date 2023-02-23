@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .color {
-  @apply text-cyan-400
+  @apply text-cyan-600
 }
 
 a, .link {
-  @apply hover:underline text-cyan-400 hover:text-cyan-600
+  @apply hover:underline color hover:text-cyan-800
 }
 
 .section-title {

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { type ReactElement } from 'react';
+import { FaSmile } from 'react-icons/fa';
 
 export default function AboutThisPageSection(): ReactElement {
   return (
@@ -10,6 +11,10 @@ export default function AboutThisPageSection(): ReactElement {
         <Link href="/about" className="link">
           here
         </Link>
+        <br />
+        <p className="flex flex-nowrap text-center justify-center">
+          I would love to receive a feedback what you think about this page <FaSmile />
+        </p>
       </div>
     </div>
   );

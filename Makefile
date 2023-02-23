@@ -6,6 +6,7 @@ help: ## show this help
 
 clean:
 	@rm -rf .next
+	@rm -rf out
 
 clean-hard: clean
 	@rm -rf node_modules

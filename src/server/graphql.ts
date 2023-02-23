@@ -3,7 +3,7 @@ export async function query(q: string): Promise<any> {
     const query = `query {${q}}`;
 
     const headers = { 'Content-Type': 'application/json' };
-    const url = process.env.GRAPHQL_SERVER || 'http://localhost:3000/';
+    const url = process.env.GRAPHQL_SERVER ?? 'http://localhost:3000/';
     const response = await fetch(url, { method: 'POST', headers, body: JSON.stringify({ query }) });
     const json = await response.json();
     if (json.errors) {

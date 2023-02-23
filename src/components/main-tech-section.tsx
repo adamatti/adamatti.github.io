@@ -11,7 +11,10 @@ export default function MainStacks({ items }: { items: Technology[] }): ReactEle
         <div className="text-center">The ones that I love most / worked more</div>
         <ShowTechs items={items} filters={false} />
         <div className="text-center">
-          Check the full list <Link href="/technologies" className='link'>here</Link>
+          Check the full list{' '}
+          <Link href="/technologies" className="link">
+            here
+          </Link>
         </div>
       </div>
     </>
