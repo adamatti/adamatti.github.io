@@ -9,9 +9,9 @@ export default function ShowPost({ post }: { post: BlogPost }): ReactElement {
       <h1 className="font-bold text-2xl">{post.title}</h1>
       <p className="text-gray-500 text-sm">{post.dateString}</p>
       <br />
-      <div>
+      <article className="prose lg:prose-xl">
         <Markdown>{post?.content ?? ''}</Markdown>
-      </div>
+      </article>
       <br />
       <p>
         <Link href="../" className="link">
