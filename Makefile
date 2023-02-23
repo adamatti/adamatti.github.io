@@ -7,8 +7,7 @@ help: ## show this help
 clean: ## clean folder
 	@rm -rf _next
 	@rm -rf blog
-	@rm -rf icons
-	@rm -rf logos
+	@rm -rf assets
 	
 	@rm -f *.html
 	@rm -f *.png
