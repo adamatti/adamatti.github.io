@@ -40,6 +40,7 @@ export default function Footer(): ReactElement {
             <FaWhatsapp />
           </FooterLink>
         </div>
+        <div className="text-sm text-gray-500">Build version: {process.env.NEXT_PUBLIC_RELEASE_TAG ?? ''}</div>
       </div>
     </footer>
   );
