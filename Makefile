@@ -27,7 +27,9 @@ build: clean build-only ## build
 	
 build-prod: clean
 	@BASE_PATH=/page-react NODE_ENV=production yarn --silent export
-	@touch out/.nojekill
+	@touch out/.nojekyll
+
+	@cd ../page-react-deploy; make clean
 	@cp -R out/* ../page-react-deploy
 
 .PHONY: graphql-server

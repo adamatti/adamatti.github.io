@@ -1,12 +1,13 @@
 import Image from '~/components/next-custom/image';
 import Link from 'next/link';
 import { type ReactNode, type ReactElement } from 'react';
-import { type Company, type Job, type Project, type Technology } from '~/types';
+import { type Job, type Technology } from '~/types';
 import { query } from '../server/graphql';
-import { format, parseISO, formatDistance, compareAsc } from 'date-fns';
+import { parseISO, compareAsc } from 'date-fns';
 import hdate from 'human-date';
 import ShowTechs from '~/components/show-techs';
 import PlainLink from '~/components/plain-link';
+import { ShowJobs } from '~/components/jobs/show-jobs';
 
 export async function getStaticProps(): Promise<{ props: { jobs: Job[]; techs: Technology[] } }> {
   const q = `
@@ -55,105 +56,10 @@ export async function getStaticProps(): Promise<{ props: { jobs: Job[]; techs: T
   };
 }
 
-function CompanyLogos({ job }: { job: Job }): ReactElement {
-  const companies: Company[] = [job.agency, job.company].filter((i) => i?.logo) as Company[];
-
-  if (!companies || companies.length === 0) {
-    return <Image src="logos/empty.png" alt="no logo" width={48} height={48} />;
-  }
-
-  return (
-    <>
-      {companies.map((c: Company) => {
-        return (
-          <Link key={c.id} href={c.url} target="_blank">
-            <Image key={c.id} src={`logos/${c.logo ?? ''}`} alt={c.name} width={48} height={48} />
-          </Link>
-        );
-      })}
-    </>
-  );
-}
-
-function JobDates({ job }: { job: Job }): ReactElement {
-  const formatString = 'MMM yyyy';
-
-  const formatDate = (date: string): string => format(parseISO(date), formatString);
-
-  const startDate = parseISO(job.startDate);
-  const endDate = job.endDate ? parseISO(job.endDate) : new Date();
-  const diff = formatDistance(endDate, startDate);
-
-  return (
-    <>
-      {formatDate(job.startDate)} - {job.endDate ? formatDate(job.endDate) : 'Current'} ({diff})
-    </>
-  );
-}
-
-function Projects({ job }: { job: Job }): ReactElement {
-  if (!job.projects) {
-    return <></>;
-  }
-
-  return (
-    <div>
-      <p className="font-bold">Projects:</p>
-      <div>
-        {job.projects.map((p: Project) => {
-          return (
-            <div key={p.id} className="grid grid-cols-[auto_200px] gap-2 py-1">
-              <div>
-                <div className="underline">{p.title}</div>
-                <div>
-                  <div>{p.description}</div>
-                  {p.results && (
-                    <div className="flex gap-1">
-                      <div className="font-semibold">Results:</div>
-                      <div>{p.results}</div>
-                    </div>
-                  )}
-                </div>
-              </div>
-              <div className="align-text-bottom text-sm text-gray-500">{p.keywords.join(', ')}</div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-function JobCard({ job }: { job: Job }): ReactElement {
-  const companyName = job.agency
-    ? `${job.agency.name} providing services to ${job.company?.name ?? 'secret'}`
-    : job.company?.name;
-
-  return (
-    <div className="w-auto grid grid-cols-[40px_auto] gap-2 py-2">
-      <div className="py-1">
-        <CompanyLogos job={job} />
-      </div>
-      <div>
-        <p className="font-bold">{job.title}</p>
-        <p className="text-gray-500 text-sm">
-          {companyName} - <JobDates job={job} />
-        </p>
-        <p>{job.description}</p>
-        <div>
-          <Projects job={job} />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function CompanyListSection({ jobs }: { jobs: Job[] }): ReactElement {
   return (
     <Section title="Experience">
-      {jobs?.map((j) => (
-        <JobCard key={j.id} job={j} />
-      ))}
+      <ShowJobs jobs={jobs} />
       <div className="font-bold">Previous companies were omitted here</div>
     </Section>
   );

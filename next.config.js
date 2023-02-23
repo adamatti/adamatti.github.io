@@ -5,7 +5,7 @@ const nextConfig = {
   basePath: process.env.BASE_PATH,
 
   experimental: {
-    basePath: process.env.BASE_PATH,
+    // basePath: process.env.BASE_PATH,
     // this feature is not ready yet
     appDir: false,
   },
