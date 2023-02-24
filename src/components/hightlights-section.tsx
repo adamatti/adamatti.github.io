@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { type ReactElement, type ReactNode } from 'react';
+import Image from './next-custom/image';
+import numWords from 'num-words';
 
 function Card(args: { title: string; href?: string; target?: string; children: ReactNode }): ReactElement {
   return (
@@ -24,9 +26,15 @@ function Card(args: { title: string; href?: string; target?: string; children: R
   );
 }
 
-export default function HightlightsSection({ countEvents }: { countEvents: number }): ReactElement {
+export default function HightlightsSection({
+  countEvents,
+  countVideos,
+}: {
+  countEvents: number;
+  countVideos: number;
+}): ReactElement {
   return (
-    <div className="grid grid-cols-5 gap-8">
+    <div className="grid grid-cols-6 gap-8">
       <Card title="Brazilian Portuguese">
         <p>It is my native language</p>
         <p className="text-xs">... and the reason I produce content in portuguese</p>
@@ -46,8 +54,20 @@ export default function HightlightsSection({ countEvents }: { countEvents: numbe
       <Card title="Home Location" href="https://goo.gl/maps/7Uig883Lwnp1MfBH9" target="_blank">
         Canoas, RS, Brazil
       </Card>
-      <Card title={`${countEvents}`} href="/events">
+      <Card title={numWords(countEvents)} href="/events">
         <p>presentations / coordinations in events</p>
+      </Card>
+      <Card title={numWords(countVideos)} href="/videos">
+        <p>videos published</p>
+        <div className="grid place-content-center">
+          <Image
+            className="hover:translate-y-1"
+            src={`/assets/icons/youtube.png`}
+            width={48}
+            height={48}
+            alt="youtube"
+          />
+        </div>
       </Card>
     </div>
   );

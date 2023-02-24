@@ -8,7 +8,8 @@ import { type Technology } from '~/types';
 
 interface StaticPropsResult {
   items: Technology[];
-  count: number;
+  countEvents: number;
+  countVideos: number;
 }
 
 export async function getStaticProps(): Promise<{ props: StaticPropsResult }> {
@@ -16,27 +17,32 @@ export async function getStaticProps(): Promise<{ props: StaticPropsResult }> {
     id name color image tags since
   }
   eventsMeta:_allEventsMeta{
-    count
+    countEvents:count
+  }
+  videosMeta:_allVideosMeta {
+    countVideos:count
   }`;
 
   const {
     items,
-    eventsMeta: { count },
+    eventsMeta: { countEvents },
+    videosMeta: { countVideos },
   } = await query(q);
 
   return {
     props: {
       items,
-      count,
+      countEvents,
+      countVideos,
     },
   };
 }
 
-export default function Home({ items, count }: StaticPropsResult): ReactElement {
+export default function Home({ items, countEvents, countVideos }: StaticPropsResult): ReactElement {
   return (
     <>
       <AboutMeSection />
-      <HightlightsSection countEvents={count} />
+      <HightlightsSection countEvents={countEvents} countVideos={countVideos} />
       <MainStacks items={items} />
       <AboutThisPageSection />
     </>

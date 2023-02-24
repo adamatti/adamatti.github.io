@@ -58,3 +58,12 @@ export interface EventRecord {
   tags: string[];
   links: Record<string, string>;
 }
+
+export interface Video {
+  id: number;
+  title: string;
+  description: string;
+  url: string;
+  embedId: string;
+  tags: string[];
+}
