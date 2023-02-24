@@ -6,25 +6,37 @@ import MainStacks from '~/components/main-tech-section';
 import { query } from '~/server/graphql';
 import { type Technology } from '~/types';
 
-export async function getStaticProps(): Promise<{ props: { items: Technology[] } }> {
+interface StaticPropsResult {
+  items: Technology[];
+  count: number;
+}
+
+export async function getStaticProps(): Promise<{ props: StaticPropsResult }> {
   const q = `items:allTeches(filter: {q: "loved"}) {
     id name color image tags since
+  }
+  eventsMeta:_allEventsMeta{
+    count
   }`;
 
-  const { items } = await query(q);
+  const {
+    items,
+    eventsMeta: { count },
+  } = await query(q);
 
   return {
     props: {
       items,
+      count,
     },
   };
 }
 
-export default function Home({ items }: { items: Technology[] }): ReactElement {
+export default function Home({ items, count }: StaticPropsResult): ReactElement {
   return (
     <>
       <AboutMeSection />
-      <HightlightsSection />
+      <HightlightsSection countEvents={count} />
       <MainStacks items={items} />
       <AboutThisPageSection />
     </>
