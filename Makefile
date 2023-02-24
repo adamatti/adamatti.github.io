@@ -29,8 +29,7 @@ build-only: lint
 build: clean build-only ## build
 	
 build-prod: clean
-	@BASE_PATH=/page-react NEXT_PUBLIC_BASE_PATH=/page-react \
-		RELEASE_TAG=$(RELEASE_TAG) NEXT_PUBLIC_RELEASE_TAG=$(RELEASE_TAG) \
+	@RELEASE_TAG=$(RELEASE_TAG) NEXT_PUBLIC_RELEASE_TAG=$(RELEASE_TAG) \
 		NODE_ENV=production yarn --silent export
 	@touch out/.nojekyll
 
