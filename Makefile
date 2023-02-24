@@ -7,11 +7,14 @@ help: ## show this help
 clean: ## clean folder
 	@rm -rf _next
 	@rm -rf blog
+	@rm -rf technologies
 	@rm -rf assets
 	
 	@rm -f *.html
 	@rm -f *.png
 	@rm -f *.ico
+
+	@ls -a
 
 deploy: ## deploy
 	git add .
