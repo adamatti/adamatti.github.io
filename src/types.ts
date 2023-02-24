@@ -67,3 +67,13 @@ export interface Video {
   embedId: string;
   tags: string[];
 }
+
+export interface PetProject {
+  id: number;
+  name: string;
+  url: string;
+  description: string;
+  createdAt: string;
+  language: string;
+  topics: string[];
+}

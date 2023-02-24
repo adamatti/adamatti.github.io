@@ -44,3 +44,6 @@ release: build-prod
 .PHONY: graphql-server
 graphql-server: ## Run graphql server (required by local dev / build)
 	@nodemon -w ./graphql-server --exec "yarn --silent server"
+
+export-github-repos:
+	@node graphql-server/github/export.js
