@@ -48,3 +48,13 @@ export interface BlogPost {
   content: string;
   tags: string[];
 }
+
+export interface EventRecord {
+  id: number;
+  name: string;
+  description: string;
+  talk: string;
+  date: string;
+  tags: string[];
+  links: Record<string, string>;
+}

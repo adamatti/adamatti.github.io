@@ -17,3 +17,9 @@ a, .link {
 .section-text {
   @apply text-sm mt-3 leading-8
 }
+
+.app-dropbox {
+  label {
+    @apply bg-cyan-400 hover:bg-cyan-600 border-0
+  }
+}
