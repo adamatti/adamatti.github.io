@@ -14,6 +14,7 @@ clean: ## clean folder
 	@rm -f *.png
 	@rm -f *.ico
 
+	@echo "Current files in the gp-pages folder"
 	@ls -a
 
 deploy: ## deploy
