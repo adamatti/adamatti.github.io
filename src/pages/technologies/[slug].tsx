@@ -26,7 +26,7 @@ interface PageProps {
 
 export function getStaticPaths(): { paths: Array<{ params: StaticPathResult }>; fallback: boolean } {
   // removed 'java' as it conflicts with javascript. Use jvm instead
-  const pages = ['golang', 'javascript', 'jvm', 'js', 'groovy', 'gradle', 'nodejs', 'kotlin', 'scala'];
+  const pages = ['golang', 'javascript', 'jvm', 'js', 'groovy', 'gradle', 'nodejs', 'kotlin', 'scala', 'typescript'];
   return {
     paths: pages.map((slug) => ({
       params: {
@@ -227,6 +227,9 @@ export default function TechPage({ slug, ...args }: PageProps): ReactElement {
       <PostsSection slug={slug} posts={args.posts} />
       <VideoSection slug={slug} videos={args.videos} />
       <PetProjectsSection slug={slug} projects={args.petProjects} />
+      <p>
+        Check all my resume at <Link href="/resume">/resume</Link>
+      </p>
     </div>
   );
 }

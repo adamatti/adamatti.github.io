@@ -9,7 +9,7 @@ export default function MainStacks({ items }: { items: Technology[] }): ReactEle
       <div className="mx-auto max-w-screen-lg py-6">
         <div className="section-title">My main technologies</div>
         <div className="text-center">The ones that I love most / worked more</div>
-        <ShowTechs items={items} filters={false} />
+        <ShowTechs items={items} filters={false} addLinks={true} />
         <div className="text-center">
           Check the full list{' '}
           <Link href="/technologies" className="link">
