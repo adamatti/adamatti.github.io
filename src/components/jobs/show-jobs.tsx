@@ -20,7 +20,7 @@ function JobDates({ job }: { job: Job }): ReactElement {
   );
 }
 
-function JobCard({ job }: { job: Job }): ReactElement {
+function JobCard({ job, filter }: { job: Job; filter?: string }): ReactElement {
   const companyName = job.agency
     ? `${job.agency.name} providing services to ${job.company?.name ?? 'secret'}`
     : job.company?.name;
@@ -44,11 +44,11 @@ function JobCard({ job }: { job: Job }): ReactElement {
   );
 }
 
-export function ShowJobs({ jobs }: { jobs: Job[] }): ReactElement {
+export function ShowJobs({ jobs, filter }: { jobs: Job[]; filter?: string }): ReactElement {
   return (
     <>
       {jobs?.map((j) => (
-        <JobCard key={j.id} job={j} />
+        <JobCard key={j.id} job={j} filter={filter} />
       ))}
     </>
   );
