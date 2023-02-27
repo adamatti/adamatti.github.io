@@ -4,7 +4,7 @@ import { type Technology } from '../../types';
 import { query } from '~/server/graphql';
 
 export async function getStaticProps(): Promise<{ props: { items: Technology[] } }> {
-  const q = `items:allTeches(sortField: "since", sortOrder: "desc") {
+  const q = `items:allTeches(sortField: "since", sortOrder: "asc") {
     id name color image tags since
   }`;
 
@@ -24,7 +24,7 @@ export default function TechPage({ items }: { items: Technology[] }): ReactEleme
     const filter = event.target.value.toLocaleLowerCase();
 
     const filterLogic = (t: Technology): boolean => {
-      return t.name.toLocaleLowerCase().includes(filter);
+      return JSON.stringify(t).toLocaleLowerCase().includes(filter);
     };
 
     const newFiltered = filter ? items.filter(filterLogic) : items;
