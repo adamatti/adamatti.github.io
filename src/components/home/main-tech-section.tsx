@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { type ReactElement } from 'react';
 import { type Technology } from '~/types';
-import ShowTechs from './show-techs';
+import ShowTechs from '../show-techs';
 
 export default function MainStacks({ items }: { items: Technology[] }): ReactElement {
   return (

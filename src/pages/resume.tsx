@@ -65,7 +65,7 @@ function CompanyListSection({ jobs }: { jobs: Job[] }): ReactElement {
 }
 
 function TechnologyListSection({ techs }: { techs: Technology[] }): ReactElement {
-  const lovedOnes = techs.filter((t) => t.tags.includes('loved'));
+  const lovedOnes = techs.filter((t) => t.tags.includes('love'));
 
   return (
     <Section title="Main Tech Skills">
@@ -98,15 +98,16 @@ function SummarySection(): ReactElement {
   return (
     <Section title="Summary">
       <ul className="list-disc px-4">
-        <li>English level C2 - did the latest test at 17 June 2020</li>
-        <li>Work with IT since 2000, mainly on backend (e.g. API, event processing) and infra</li>
-        <li>Knows a little about frontend (e.g. react, vue), but UX/design is not my thing</li>
-        <li>Worked in the last 10 years as tech lead, working in all the development lifecycle</li>
+        <li>English level C2 - did the latest test at June 2020</li>
         <li>
-          Worked 1 year (2020, at Creditas) as manager, responsible for 3 teams / 10 resources. Would love to do it
-          again
+          Senior backend software engineed with +22 yrs experience, with experience with APIs, event processing and
+          infra
         </li>
-        <li>Remote worker, no plans to relocate</li>
+        <li>I know a few of frontend (e.g. react, vue), but UX/design is not my thing</li>
+        <li>
+          I worked in the last 10 years as tech lead, working in all the development lifecycle. Also have management
+          experience
+        </li>
       </ul>
     </Section>
   );
@@ -116,7 +117,7 @@ function OtherTechnologiesSection({ techs }: { techs: Technology[] }): ReactElem
   return (
     <Section title="Other Technologies">
       {techs
-        .filter((t) => !t.tags.includes('loved'))
+        .filter((t) => !t.tags.includes('love'))
         .sort((a, b) => compareAsc(parseISO(a.since), parseISO(b.since)))
         .map((t) => `${t.name} (${hdate.relativeTime(t.since).replaceAll(' ago', '')})`)
         .join(', ')}

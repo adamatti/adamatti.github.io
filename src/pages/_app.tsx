@@ -2,9 +2,9 @@ import '~/styles/globals.scss';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { type ReactElement } from 'react';
-import TailwindHacks from '~/components/tailwind-hacks';
-import Header from '~/components/header';
-import Footer from '~/components/footer';
+import TailwindHacks from '~/components/layout/tailwind-hacks';
+import Header from '~/components/layout/header';
+import Footer from '~/components/layout/footer';
 
 const title = 'Marcelo Adamatti Portfolio';
 

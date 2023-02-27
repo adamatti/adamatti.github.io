@@ -1,5 +1,5 @@
 'use client';
-import { type ReactElement, useState } from 'react';
+import { type ReactElement, useState, useEffect } from 'react';
 import hdate from 'human-date';
 import { type Technology } from '~/types';
 import Image from './next-custom/image';
@@ -31,10 +31,18 @@ export default function ShowTechs({
   filters: boolean;
   addLinks?: boolean;
 }): ReactElement {
-  const tags = ['loved', 'language', 'database', 'tool', 'broker', 'frontend'];
+  const tags = ['love', 'language', 'database', 'tool', 'broker', 'frontend'];
   // const defaultItems = items.filter((i) => i.tags.includes('loved'));
   const [filtered, setFiltered] = useState(items);
   const [filterSelected, setFilterSelected] = useState('all');
+
+  useEffect(() => {
+    if (filterSelected === 'all') {
+      setFiltered(items);
+    } else {
+      setFiltered(items.filter((i) => i.tags.includes(filterSelected)));
+    }
+  }, [items, filterSelected]);
 
   function FilterButton({ label, isShowAll = false }: { label: string; isShowAll: boolean }): ReactElement {
     const buttonClass = 'hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded';

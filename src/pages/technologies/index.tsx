@@ -1,4 +1,4 @@
-import { type ReactElement } from 'react';
+import { useState, type ChangeEvent, type ReactElement } from 'react';
 import ShowTechs from '~/components/show-techs';
 import { type Technology } from '../../types';
 import { query } from '~/server/graphql';
@@ -18,6 +18,19 @@ export async function getStaticProps(): Promise<{ props: { items: Technology[] }
 }
 
 export default function TechPage({ items }: { items: Technology[] }): ReactElement {
+  const [filtered, setFiltered] = useState(items);
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    const filter = event.target.value.toLocaleLowerCase();
+
+    const filterLogic = (t: Technology): boolean => {
+      return t.name.toLocaleLowerCase().includes(filter);
+    };
+
+    const newFiltered = filter ? items.filter(filterLogic) : items;
+    setFiltered(newFiltered);
+  };
+
   return (
     <>
       <div className="w-full h-auto">
@@ -28,11 +41,17 @@ export default function TechPage({ items }: { items: Technology[] }): ReactEleme
               <p>These are the technologies I have worked with. </p>
               <p>
                 Frameworks (e.g. express, ktor, spring), tecniques (e.g. TDD, BDD, Microservices, Event Sourcing),
-                methodologies (e.g. kanban, scrum) aren't listed here
+                methodologies (e.g. kanban, scrum) aren't listed here (I mean, as cards)
               </p>
+              <input
+                type="text"
+                placeholder="Filter here"
+                className="input input-bordered w-full mt-5"
+                onChange={handleChange}
+              />
             </div>
           </div>
-          <ShowTechs items={items} filters={true} />
+          <ShowTechs items={filtered} filters={true} />
         </div>
       </div>
     </>

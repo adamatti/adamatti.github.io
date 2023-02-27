@@ -1,9 +1,9 @@
-import Color from './color';
-import avatar from '../../public/assets/avatar.png';
+import Color from '../color';
+import avatar from '../../../public/assets/avatar.png';
 import Link from 'next/link';
 import { type ReactElement } from 'react';
-import Image from './next-custom/image';
-import SocialLink from './social-link';
+import Image from '../next-custom/image';
+import SocialLink from '../social-link';
 
 export default function AboutMeSection(): ReactElement {
   return (
@@ -16,9 +16,9 @@ export default function AboutMeSection(): ReactElement {
       </div>
       <div className="section-text">
         <p>
-          I have +20 yrs as <Color>software engineer</Color>, +10yrs as <Color>tech lead</Color>, +1 as{' '}
-          <Color>engineer manager</Color>, do speeches/coordinate events, +5 yrs as dad (one boy). I am a very pragmatic
-          engineer that loves to deliver value.
+          I have +20 yrs as <Color>senior backend software engineer</Color>, +10yrs as <Color>tech lead</Color> with{' '}
+          <Color>management</Color> experience, do speeches/coordinate events, +5 yrs as dad (one boy). I am a very
+          pragmatic engineer that loves to deliver value.
         </p>
         <p>
           About methodologies, I am a true{' '}

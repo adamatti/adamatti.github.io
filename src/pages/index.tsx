@@ -1,8 +1,8 @@
 import { type ReactElement } from 'react';
-import AboutMeSection from '~/components/about-me-section';
-import HightlightsSection from '~/components/hightlights-section';
-import AboutThisPageSection from '~/components/about-this-page';
-import MainStacks from '~/components/main-tech-section';
+import AboutMeSection from '~/components/home/about-me-section';
+import HightlightsSection from '~/components/home/hightlights-section';
+import AboutThisPageSection from '~/components/home/about-this-page';
+import MainStacks from '~/components/home/main-tech-section';
 import { query } from '~/server/graphql';
 import { type Technology } from '~/types';
 
@@ -13,7 +13,7 @@ interface StaticPropsResult {
 }
 
 export async function getStaticProps(): Promise<{ props: StaticPropsResult }> {
-  const q = `items:allTeches(filter: {q: "loved"}) {
+  const q = `items:allTeches(filter: {q: "love"}) {
     id name color image tags since
   }
   eventsMeta:_allEventsMeta{
