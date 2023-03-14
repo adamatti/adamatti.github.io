@@ -78,22 +78,6 @@ function TechnologyListSection({ techs }: { techs: Technology[] }): ReactElement
   );
 }
 
-function TopBar(): ReactElement {
-  return (
-    <div className="flex text-3xl justify-between">
-      <div>
-        <h1 className="capitalize">Marcelo Adamatti</h1>
-      </div>
-      <div>
-        <PlainLink href="https://adamatti.github.io" />
-      </div>
-      <div>
-        <Link href="mailto:adamatti@gmail.com">adamatti@gmail.com</Link>
-      </div>
-    </div>
-  );
-}
-
 function SummarySection(): ReactElement {
   return (
     <Section title="Summary">
@@ -142,8 +126,17 @@ function EducationSection(): ReactElement {
 
 function LinksSection(): ReactElement {
   return (
-    <Section title="Links">
-      <ul className="list-disc px-4">
+    <Section title={<Link href="https://adamatti.github.io">Marcelo Adamatti</Link>}>
+      <ul className="list-disc px-4 grid grid-cols-1 sm:grid-cols-3">
+        <li>
+          email: <PlainLink href="mailto:adamatti@gmail.com" />
+        </li>
+        <li>
+          whatsapp: <PlainLink href="https://wa.me/5551984253027" />
+        </li>
+        <li>
+          portfolio: <PlainLink href="https://adamatti.github.io" />
+        </li>
         <li>
           github: <PlainLink href="https://github.com/adamatti" />
         </li>
@@ -161,7 +154,7 @@ function LinksSection(): ReactElement {
   );
 }
 
-function Section({ title, children }: { title: string; children?: ReactNode }): ReactElement {
+function Section({ title, children }: { title: string | ReactElement; children?: ReactNode }): ReactElement {
   return (
     <div className="py-2">
       <div className="text-2xl py-1">{title}</div>
@@ -173,13 +166,12 @@ function Section({ title, children }: { title: string; children?: ReactNode }): 
 export default function ResumePage({ jobs, techs }: { jobs: Job[]; techs: Technology[] }): ReactElement {
   return (
     <>
-      <TopBar />
+      <LinksSection />
       <SummarySection />
       <TechnologyListSection techs={techs} />
       <CompanyListSection jobs={jobs} />
       <OtherTechnologiesSection techs={techs} />
       <EducationSection />
-      <LinksSection />
     </>
   );
 }
