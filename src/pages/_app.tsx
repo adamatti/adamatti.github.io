@@ -5,6 +5,7 @@ import { type ReactElement } from 'react';
 import TailwindHacks from '~/components/layout/tailwind-hacks';
 import Header from '~/components/layout/header';
 import Footer from '~/components/layout/footer';
+import GoogleAnalytics from '~/components/google-analytics';
 
 const title = 'Marcelo Adamatti Portfolio';
 
@@ -29,6 +30,7 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
           {!disableLayout && <Footer />}
         </div>
       </div>
+      {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
     </>
   );
 }
