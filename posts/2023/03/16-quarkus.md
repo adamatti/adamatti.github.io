@@ -14,13 +14,13 @@ Three years ago I did some tests using [quarkus](https://quarkus.io/), to use on
 
 Today I tried it again, just registering here my steps:
 
-# 1. Install quarkus
+## 1. Install quarkus
 
 I am using [sdkman](https://sdkman.io/) for it - it is a java version manager, similar to [fnm](https://github.com/Schniz/fnm) (for node).
 
 It is easy as `sdk install quarkus`.
 
-# 2. Create a project
+## 2. Create a project
 
 Just need to run:
 
@@ -38,11 +38,11 @@ Then I added this extension to build inside a docker container:
 gradle addExtension --extensions=quarkus-container-image-docker
 ```
 
-# 3. Run
+## 3. Run
 
 `./gradlew quarkusDev`. I can't deny, it is amazing be able to change source files without the need to stop/start the application multiple times
 
-# 4. Build native
+## 4. Build native
 
 ```shell
 ./gradlew build -Dquarkus.package.type=native -Dquarkus.native.container-build=true
@@ -52,7 +52,7 @@ With this, you don't need to have [graalvm](https://www.graalvm.org/) on local m
 
 The binary file was created on `build` folder as `learn-quarkus-1.0.0-SNAPSHOT-runner`. It took ~4mins on my machine (Apple M1), 40mb is the size.
 
-# 5. Run the binary in a docker container
+## 5. Run the binary in a docker container
 
 ... just to make sure it doesn't need any of the dependencies in my local machine (e.g. java) and simulate a real deploy.
 
@@ -64,7 +64,7 @@ docker run --rm -it \
     /app -Dquarkus.http.host=0.0.0.0
 ```
 
-# Extra - version configuration
+## Extra - version configuration
 
 Just created a `.sdkmanrc` file to make sure I would use the same versions in the future: 
 
@@ -76,7 +76,7 @@ gradle=7.5.1
 quarkus=3.0.0.Alpha6
 ```
 
-# Conclusion
+## Conclusion
 
 1. Quarkus is really fast, I would love to work with it in production
 2. Really loved the way the resources/controllers are created, e.g. 
