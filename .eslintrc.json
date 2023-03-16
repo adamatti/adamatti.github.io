@@ -13,7 +13,9 @@
   "ignorePatterns": [
     ".eslintrc.json",
     ".next",
-    "node_modules/"
+    "node_modules/",
+    ".eslintignore",
+    "Dockerfile"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {

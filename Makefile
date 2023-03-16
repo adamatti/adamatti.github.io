@@ -46,3 +46,9 @@ graphql-server: ## Run graphql server (required by local dev / build)
 
 export-github-repos:
 	@node graphql-server/github/export.js
+
+test: ## Run tests
+	@yarn --silent test
+
+coverage: ## Test coverage report
+	@yarn --silent coverage
