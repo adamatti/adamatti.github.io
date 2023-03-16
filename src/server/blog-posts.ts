@@ -11,7 +11,9 @@ const loadPosts = (folder: string = postRootFolder): BlogPost[] => {
   const subfolders = files.filter((f) => fs.lstatSync(`${folder}/${f}`).isDirectory());
   const subPosts: BlogPost[] = subfolders.flatMap((subfolder) => loadPosts(`${folder}/${subfolder}`));
 
-  const posts = markdownFiles.map((filePath) => loadPostContent(`${folder}/${filePath}`));
+  const posts = markdownFiles
+    .map((filePath) => loadPostContent(`${folder}/${filePath}`))
+    .sort((a, b) => b.dateString.localeCompare(a.dateString));
   return [...subPosts, ...posts];
 };
 
