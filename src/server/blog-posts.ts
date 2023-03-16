@@ -21,11 +21,14 @@ const loadPostContent = (filePath: string): BlogPost => {
 
   const extension = path.extname(filePath);
 
+  const slugOnly: string = matterResult.data.slug?.toLowerCase() ?? path.basename(filePath, extension);
+  const dateString: string = matterResult.data.date;
+
   return {
-    slug: matterResult.data.slug?.toLowerCase() ?? path.basename(filePath, extension),
+    slug: `${dateString}-${slugOnly}`,
     title: matterResult.data.title,
     summary: matterResult.data.summary,
-    dateString: matterResult.data.date,
+    dateString,
     tags: matterResult.data.tags ?? [],
     content: matterResult.content,
   };
