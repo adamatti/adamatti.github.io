@@ -69,7 +69,7 @@ function TechnologyListSection({ techs }: { techs: Technology[] }): ReactElement
 
   return (
     <Section title="Main Tech Skills">
-      There are a lot of technologies that I still haven't the opportunity to work with professionaly (e.g. clojure,
+      There are a lot of technologies that I still haven't the opportunity to work with professionally (e.g. clojure,
       elixir).
       <br />
       Those are the main ones that I am proficient and love to work with:
@@ -81,17 +81,17 @@ function TechnologyListSection({ techs }: { techs: Technology[] }): ReactElement
 function SummarySection(): ReactElement {
   return (
     <Section title="Summary">
-      <ul className="list-disc px-4">
-        <li>English level C2 - did the latest test at June 2020</li>
+      <ul className="list-disc px-4">        
         <li>
-          Senior backend software engineed with +22 yrs experience, with experience with APIs, event processing and
+          Senior backend software engineer with +22 yrs experience, with experience with APIs, event processing and
           infra
         </li>
-        <li>I know a few of frontend (e.g. react, vue), but UX/design is not my thing</li>
         <li>
-          I worked in the last 10 years as tech lead, working in all the development lifecycle. Also have management
+          I worked in the last 10 years as tech lead, working in all the SDLC. Also have management
           experience
         </li>
+        <li>Public speaker, tech youtuber, talking about leadership, tests/quality, microservices/architecture, languages and tools</li>
+        <li>English level C2 - did the latest test at June 2020</li>
       </ul>
     </Section>
   );
