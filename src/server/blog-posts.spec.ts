@@ -1,4 +1,4 @@
-import { getPosts, getPost } from './blog-posts';
+import { getPosts, getPost, getTags } from './blog-posts';
 
 describe('Blog post repository', () => {
   it('should return all posts', () => {
@@ -11,5 +11,10 @@ describe('Blog post repository', () => {
       const result = getPost(post.slug);
       expect(result).toBeTruthy();
     });
+  });
+
+  it('should return tags', () => {
+    const tags = getTags();
+    expect(tags).toBeTruthy();
   });
 });

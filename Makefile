@@ -36,16 +36,9 @@ build-prod: clean
 	@cd ../page-react-deploy; make clean
 	@cp -R out/* ../page-react-deploy
 
-release: build-prod
+release: build-prod ## perform release action
 	@cd ../page-react-deploy; make deploy
 	@echo "Version $(RELEASE_TAG) released"
-
-.PHONY: graphql-server
-graphql-server: ## Run graphql server (required by local dev / build)
-	@nodemon -w ./graphql-server --exec "yarn --silent server"
-
-export-github-repos:
-	@node graphql-server/github/export.js
 
 test: ## Run tests
 	@yarn --silent test

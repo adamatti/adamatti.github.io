@@ -11,10 +11,9 @@ const loadPosts = (folder: string = postRootFolder): BlogPost[] => {
   const subfolders = files.filter((f) => fs.lstatSync(`${folder}/${f}`).isDirectory());
   const subPosts: BlogPost[] = subfolders.flatMap((subfolder) => loadPosts(`${folder}/${subfolder}`));
 
-  const posts = markdownFiles
-    .map((filePath) => loadPostContent(`${folder}/${filePath}`))
-    .sort((a, b) => b.dateString.localeCompare(a.dateString));
-  return [...subPosts, ...posts];
+  const posts = markdownFiles.map((filePath) => loadPostContent(`${folder}/${filePath}`));
+
+  return [...subPosts, ...posts].sort((a, b) => b.dateString.localeCompare(a.dateString));
 };
 
 const loadPostContent = (filePath: string): BlogPost => {
@@ -42,3 +41,12 @@ const posts: BlogPost[] = loadPosts();
 export const getPosts = (): BlogPost[] => posts;
 
 export const getPost = (slug: string): BlogPost | undefined => posts.find((p) => p.slug === slug);
+
+export const getTags = (): Record<string, number> => {
+  return getPosts().reduce((total: Record<string, number>, cur) => {
+    cur.tags.forEach((t) => {
+      total[t] = (total[t] ?? 0) + 1;
+    });
+    return total;
+  }, {});
+};
