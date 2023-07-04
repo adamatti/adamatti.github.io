@@ -19,6 +19,6 @@ Take a look on the consequences of unhappiness and happiness.
 
 ![Consequences of happiness](/assets/posts/2023-07-04-happiness/happy.jpg)
 
-Developments goes beyond code, product and methodologies. 
+Development goes beyond code, product and methodologies. 
 
 Different methodologies (e.g. scrum/kanban) will not address unhappiness issues.
