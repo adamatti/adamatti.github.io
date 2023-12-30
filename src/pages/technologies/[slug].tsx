@@ -128,9 +128,11 @@ function JobsSection({ slug, jobs }: { slug: string; jobs: Job[] }): ReactElemen
       {jobs && jobs.length > 0 && (
         <Section title={`Companies that I worked with ${slug}`}>
           <ShowJobs jobs={jobs} />
-          { SHOW_RESUME && <p className="mt-5">
-            Check all my resume at <Link href="/resume">/resume</Link>
-          </p>}
+          {SHOW_RESUME && (
+            <p className="mt-5">
+              Check all my resume at <Link href="/resume">/resume</Link>
+            </p>
+          )}
         </Section>
       )}
     </>

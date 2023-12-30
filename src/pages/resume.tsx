@@ -168,9 +168,9 @@ export default function ResumePage({ jobs, techs }: { jobs: Job[]; techs: Techno
   if (!SHOW_RESUME) {
     return (
       <div>
-        Page currently disabled. Return to <Link href='/'>home</Link>
+        Page currently disabled. Return to <Link href="/">home</Link>
       </div>
-    )
+    );
   }
   return (
     <>
