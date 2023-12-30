@@ -7,6 +7,7 @@ import hdate from 'human-date';
 import ShowTechs from '~/components/show-techs';
 import PlainLink from '~/components/plain-link';
 import { ShowJobs } from '~/components/jobs/show-jobs';
+import { SHOW_RESUME } from '~/config';
 
 export async function getStaticProps(): Promise<{ props: { jobs: Job[]; techs: Technology[] } }> {
   const q = `
@@ -164,6 +165,13 @@ function Section({ title, children }: { title: string | ReactElement; children?:
 }
 
 export default function ResumePage({ jobs, techs }: { jobs: Job[]; techs: Technology[] }): ReactElement {
+  if (!SHOW_RESUME) {
+    return (
+      <div>
+        Page currently disabled. Return to <Link href='/'>home</Link>
+      </div>
+    )
+  }
   return (
     <>
       <LinksSection />

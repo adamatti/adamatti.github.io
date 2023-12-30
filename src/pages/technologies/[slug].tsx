@@ -9,6 +9,7 @@ import { query } from '~/server/graphql';
 import ShowPetProjects from '~/components/show-pet-projects';
 import { type Job, type BlogPost, type EventRecord, type Technology, type Video, type PetProject } from '~/types';
 import Link from 'next/link';
+import { SHOW_RESUME } from '~/config';
 
 interface StaticPathResult {
   slug: string;
@@ -127,9 +128,9 @@ function JobsSection({ slug, jobs }: { slug: string; jobs: Job[] }): ReactElemen
       {jobs && jobs.length > 0 && (
         <Section title={`Companies that I worked with ${slug}`}>
           <ShowJobs jobs={jobs} />
-          <p className="mt-5">
+          { SHOW_RESUME && <p className="mt-5">
             Check all my resume at <Link href="/resume">/resume</Link>
-          </p>
+          </p>}
         </Section>
       )}
     </>

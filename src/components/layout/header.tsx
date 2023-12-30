@@ -1,3 +1,4 @@
+import { SHOW_RESUME } from '~/config';
 import Link from 'next/link';
 import { type ReactElement } from 'react';
 
@@ -17,7 +18,7 @@ export default function Header(): ReactElement {
       </Link>
       <div className="flex items-center text-base leading-5">
         <div className="hidden sm:block">
-          <LinkHeader href="/resume">Resume</LinkHeader>
+          {SHOW_RESUME && <LinkHeader href="/resume">Resume</LinkHeader> }
           <LinkHeader href="/blog">Blog</LinkHeader>
           <LinkHeader href="https://github.com/adamatti" target="_blank">
             Github
