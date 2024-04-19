@@ -132,7 +132,7 @@ As always, the full sample is available on [github](https://github.com/adamatti/
 
 Now go to the [documentation](https://taskfile.dev/usage/).
 
-Remove commands from `README.md` files and confluence/sharepoint. Also remove it for anemic `package.json` 😛
+Remove commands from `README.md` files and confluence/sharepoint. Also remove it from anemic `package.json` 😛
 
 My global taskfiles are shared [here](https://github.com/adamatti/dotfiles/tree/main/taskfile) for reference.
 
