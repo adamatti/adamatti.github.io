@@ -112,6 +112,10 @@ Pay a close look on the install task.
 3. at the end it checks if the `node_modules` folder was created.
 4. Even caching based on the `source`, if you remove the `node_modules` folder (check) it will run again.
 
+So, you just need to run your daily tasks (e.g. tests, lints, run local) and the script itself will detect what is pending and run it if needed.
+
+No more crazy issues that you forgot to update a dependency or database change.
+
 ## Ok, show me a normal day of work
 
 At the first time, you just need to run `task r` to run the app. It will install dependencies, start database, apply db changes and run the app.
