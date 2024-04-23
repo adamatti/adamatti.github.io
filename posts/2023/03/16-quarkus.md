@@ -139,6 +139,6 @@ public class GreetingResourceIT extends GreetingResourceTest {
 }
 ```
 
-5. [Micronault](https://micronaut.io/) is still my prefered [spring](https://spring.io/) replacement, but this is a subject for another topic.
+5. [Micronault](https://micronaut.io/) is still my preferred [spring](https://spring.io/) replacement, but this is a subject for another topic.
 
 I still curious about Quarkus usage, let's keep watching and see how does it goes.
