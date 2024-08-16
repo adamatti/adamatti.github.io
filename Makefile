@@ -29,7 +29,9 @@ build-only: lint
 build: clean build-only ## build
 	
 build-prod: clean
-	@RELEASE_TAG=$(RELEASE_TAG) NEXT_PUBLIC_RELEASE_TAG=$(RELEASE_TAG) \
+	@RELEASE_TAG=$(RELEASE_TAG) \
+		NEXT_PUBLIC_RELEASE_TAG=$(RELEASE_TAG) \
+		GRAPHQL_SERVER=http://localhost:8889/ \
 		NODE_ENV=production yarn --silent export
 	@touch out/.nojekyll
 
