@@ -36,11 +36,10 @@ const loadPostContent = (filePath: string): BlogPost => {
 };
 
 const postRootFolder = 'posts';
-const posts: BlogPost[] = loadPosts();
 
-export const getPosts = (): BlogPost[] => posts;
+export const getPosts = (): BlogPost[] => loadPosts();
 
-export const getPost = (slug: string): BlogPost | undefined => posts.find((p) => p.slug === slug);
+export const getPost = (slug: string): BlogPost | undefined => loadPosts().find((p) => p.slug === slug);
 
 export const getTags = (): Record<string, number> => {
   return getPosts().reduce((total: Record<string, number>, cur) => {
