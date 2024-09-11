@@ -25,4 +25,4 @@ For sure I will consider it for my pet projects.
 
 My full code is available on [github](https://github.com/adamatti/learn-cf-worker).
 
-Next, I will try it with [remix](https://remix.run/) for a full stack experience. If I got it right, it should be [super simple](https://hono.dev/examples/with-remix)
+Next, I will try it with [remix](https://remix.run/) for a full stack experience. If I got it right, it should be [super simple](https://hono.dev/examples/with-remix) (or [creating from scratch](https://developers.cloudflare.com/pages/framework-guides/deploy-a-remix-site/)).
