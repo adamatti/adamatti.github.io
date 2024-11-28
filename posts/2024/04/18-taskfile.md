@@ -7,6 +7,7 @@ tags:
   - javascript
   - typescript
   - tools
+  - golang
 ---
 
 Ok, Make/Makefiles are great. I spoke about then in the [last post](/blog/posts/2024-04-08-makefile).
@@ -141,4 +142,3 @@ Remove commands from `README.md` files and confluence/sharepoint. Also remove it
 My global taskfiles are shared [here](https://github.com/adamatti/dotfiles/tree/main/taskfile) for reference.
 
 My backup scripts using rsync are also on taskfiles, but this is a subject for another post.
-
