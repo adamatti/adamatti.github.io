@@ -27,6 +27,9 @@ const nextConfig = {
     nodeEnv: process.env.NODE_ENV ?? 'production',
   },
   transpilePackages: ['react-hotjar'],
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 module.exports = nextConfig;

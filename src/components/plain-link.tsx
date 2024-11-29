@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import { type ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 export default function PlainLink({ href }: { href: string }): ReactElement {
-  const regex = /(http[s]?|mailto):(\/\/)?(?<url>.*)/;
+	const regex = /(http[s]?|mailto):(\/\/)?(?<url>.*)/;
 
-  const label = regex.exec(href)?.groups?.url ?? href;
+	const label = regex.exec(href)?.groups?.url ?? href;
 
-  return (
-    <Link href={href} target="_blank" className="link">
-      {label}
-    </Link>
-  );
+	return (
+		<Link href={href} target="_blank" className="link">
+			{label}
+		</Link>
+	);
 }
