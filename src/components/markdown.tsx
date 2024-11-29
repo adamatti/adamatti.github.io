@@ -1,6 +1,8 @@
 import MarkdownToJSX from 'markdown-to-jsx';
 import Head from 'next/head';
+import Link from 'next/link';
 import React, { type ReactElement } from 'react';
+import ExternalLink from './external-link';
 
 function SyntaxHighlightedCode(
 	props: React.HTMLProps<HTMLElement>,
@@ -17,6 +19,21 @@ function SyntaxHighlightedCode(
 	}, [props.className]);
 
 	return <code {...props} ref={ref} />;
+}
+
+function LinkRenderer(props: { href: string; children: React.ReactNode }) {
+	if (props.href.toLowerCase().startsWith('http')) {
+		return (
+			<ExternalLink href={props.href} rel="noreferrer">
+				{props.children}
+			</ExternalLink>
+		);
+	}
+	return (
+		<Link href={props.href} style={{ color: 'white' }}>
+			{props.children}
+		</Link>
+	);
 }
 
 export default function Markdown({
@@ -38,6 +55,7 @@ export default function Markdown({
 				options={{
 					overrides: {
 						code: SyntaxHighlightedCode,
+						a: LinkRenderer,
 					},
 				}}
 			>
