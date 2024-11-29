@@ -25,8 +25,7 @@ export default function Markdown ({children}: {children: string}) {
             href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/nord.min.css"
             />
             <script
-            crossorigin
-            src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"
+              src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"
             ></script>
         </Head>
         <MarkdownToJSX
