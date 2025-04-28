@@ -1,7 +1,7 @@
 ---
 title: MCP sample - CLI
 summary: A basic MCP sample for CLI with typescript
-date: "2025-04-25"
+date: "2025-04-28"
 slug: mcp-cli
 tags:
   - typescript
