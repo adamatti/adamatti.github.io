@@ -92,3 +92,5 @@ Executing operation:
 ```sh
 echo '{"jsonrpc": "2.0", "id": 1, "method": "tools/call", "params": {"name": "Sum", "arguments": {"x": 1, "y": 2}}}' | pnpm dlx tsx cli.ts
 ```
+
+For http server check it [here](/blog/posts/2025-04-28-mcp-http);
