@@ -2,7 +2,7 @@
 title: AI Leaderboards
 summary: Check which is the top LLM of the day
 date: "2025-05-15"
-slug: ai-leaderboard
+slug: ai-leaderboards
 tags:
   - ai
 ---
