@@ -30,7 +30,7 @@ function LinkRenderer(props: { href: string; children: React.ReactNode }) {
 		);
 	}
 	return (
-		<Link href={props.href} style={{ color: 'white' }}>
+		<Link href={props.href}>
 			{props.children}
 		</Link>
 	);

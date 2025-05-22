@@ -5,6 +5,7 @@ slug: clt
 summary: A manifest against CLT
 tags:
   - salary
+  - brasil
 ---
 
 This is intended to explain to recruiters, friends and companies that I don't want to work as CLT - and how bad I think this model is.
