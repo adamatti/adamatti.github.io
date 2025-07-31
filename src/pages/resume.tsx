@@ -5,7 +5,6 @@ import type { ReactElement, ReactNode } from 'react';
 import { ShowJobs } from '~/components/jobs/show-jobs';
 import PlainLink from '~/components/plain-link';
 import ShowTechs from '~/components/show-techs';
-import { SHOW_RESUME } from '~/config';
 import type { Job, Technology } from '~/types';
 import { query } from '../server/graphql';
 
@@ -88,7 +87,7 @@ function SummarySection(): ReactElement {
 		<Section title="Summary">
 			<ul className="list-disc px-4">
 				<li>
-					Senior backend software engineer with +22 yrs experience, with
+					Senior backend software engineer with +25 yrs experience, with
 					experience with APIs, event processing and infra
 				</li>
 				<li>
@@ -185,13 +184,6 @@ export default function ResumePage({
 	jobs,
 	techs,
 }: { jobs: Job[]; techs: Technology[] }): ReactElement {
-	if (!SHOW_RESUME) {
-		return (
-			<div>
-				Page currently disabled. Return to <Link href="/">home</Link>
-			</div>
-		);
-	}
 	return (
 		<>
 			<LinksSection />

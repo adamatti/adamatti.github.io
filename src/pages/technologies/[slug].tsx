@@ -17,6 +17,7 @@ import type {
 	Technology,
 	Video,
 } from '~/types';
+import { technologiesToList } from './config';
 
 interface StaticPathResult {
 	slug: string;
@@ -36,23 +37,10 @@ export function getStaticPaths(): {
 	paths: Array<{ params: StaticPathResult }>;
 	fallback: boolean;
 } {
-	// removed 'java' as it conflicts with javascript. Use jvm instead
-	const pages = [
-		'golang',
-		'javascript',
-		'jvm',
-		'js',
-		'groovy',
-		'gradle',
-		'nodejs',
-		'kotlin',
-		'scala',
-		'typescript',
-	];
 	return {
-		paths: pages.map((slug) => ({
+		paths: technologiesToList.map((t) => ({
 			params: {
-				slug,
+				slug: t.key,
 			},
 		})),
 		fallback: false,
