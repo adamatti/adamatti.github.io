@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { technologiesToList } from "./config";
+import { technologiesToList } from "~/config";
 import Link from "next/link";
 
 function ShowList({ category }: { category: string }): ReactElement {

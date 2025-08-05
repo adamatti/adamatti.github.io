@@ -6,7 +6,7 @@ import { ShowJobs } from '~/components/jobs/show-jobs';
 import ShowPetProjects from '~/components/show-pet-projects';
 import ShowTechs from '~/components/show-techs';
 import VideoCard from '~/components/video-card';
-import { SHOW_RESUME } from '~/config';
+import { SHOW_RESUME, technologiesToList } from '~/config';
 import { getPosts } from '~/server/blog-posts';
 import { query } from '~/server/graphql';
 import type {
@@ -17,7 +17,6 @@ import type {
 	Technology,
 	Video,
 } from '~/types';
-import { technologiesToList } from './config';
 
 interface StaticPathResult {
 	slug: string;
