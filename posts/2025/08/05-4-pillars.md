@@ -5,6 +5,7 @@ date: "2025-08-05"
 slug: 4-pillars
 tags:
   - leadership
+  - grow
 ---
 
 I just watched [this presentation](https://www.annashipman.co.uk/jfdi/people-process-tech-business.html) from Anna Shipman:
