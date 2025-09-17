@@ -5,6 +5,7 @@ date: '2024-11-29'
 slug: cursor
 tags:
   - tools
+  - cursor
 ---
 
 I received a newsletter today, [Which IDEs do software engineers love, and why?](https://blog.pragmaticengineer.com/ide-that-software-engineers-love/).
