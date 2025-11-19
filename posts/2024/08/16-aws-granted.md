@@ -18,7 +18,7 @@ The [installation](https://docs.commonfate.io/granted/getting-started#installing
 
 ```
 brew tap common-fate/granted
-brew install granted
+brew install common-fate/granted/granted
 ```
 
 The [configuration](https://docs.commonfate.io/granted/usage/automatic-config-generation#all-available-aws-sso-roles) was all auto generated:
@@ -42,3 +42,7 @@ assume -c <role>
 ```
 
 Super useful, highly recommended.
+
+# Update - 2025.11.19
+
+Use [this](https://github.com/fwdcloudsec/granted/discussions/897#discussioncomment-14654787) if `assume` does't show.
