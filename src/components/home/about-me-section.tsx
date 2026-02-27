@@ -9,7 +9,7 @@ const yearsSince = (year: number) => new Date().getFullYear() - year;
 
 export default function AboutMeSection(): ReactElement {
   return (
-    <div className="mx-auto max-w-screen-lg py-6">
+    <div className="mx-auto max-w-screen-lg pt-0 pb-6">
       <div className="relative mx-auto h-80 w-80 overflow-hidden rounded-full bg-gradient-to-b from-teal-500">
         <Image
           alt="Avatar"

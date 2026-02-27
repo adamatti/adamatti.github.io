@@ -10,7 +10,7 @@ function LinkHeader(args: {
 }): ReactElement {
   return (
     <Link
-      className="p-1 font-medium text-gray-900 sm:p-4 dark:text-gray-100"
+      className="p-2 font-medium text-gray-900 sm:p-4 dark:text-gray-100"
       href={args.href}
       target={args.target}
     >
@@ -21,15 +21,14 @@ function LinkHeader(args: {
 
 export default function Header(): ReactElement {
   return (
-    <header className="flex items-center justify-between py-10">
-      <Link
-        className="color hidden h-6 font-semibold text-2xl sm:block"
-        href="/"
-      >
-        Marcelo Adamatti
+    <header className="sticky top-0 z-40 flex items-center justify-between bg-white/75 pt-3 pb-0 backdrop-blur-md transition-colors duration-300 sm:pt-4 sm:pb-0 dark:bg-gray-900/75">
+      <Link className="color h-6 font-semibold text-2xl" href="/">
+        <span className="sr-only">Marcelo Adamatti</span>
+        <span className="hidden sm:inline">Marcelo Adamatti</span>
+        <span className="sm:hidden">Adamatti</span>
       </Link>
       <div className="ml-auto flex items-center text-base leading-5 sm:ml-0">
-        <div className="hidden sm:block">
+        <div className="flex items-center">
           {SHOW_RESUME && <LinkHeader href="/resume">Resume</LinkHeader>}
           <LinkHeader href="/blog">Blog</LinkHeader>
           <LinkHeader href="https://github.com/adamatti" target="_blank">
