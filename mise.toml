@@ -1,0 +1,4 @@
+[tools]
+ni = "latest"
+pnpm = "latest"
+nodenv = "25"

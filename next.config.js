@@ -8,7 +8,6 @@ const nextConfig = {
   experimental: {
     // basePath: process.env.BASE_PATH,
     // this feature is not ready yet
-    appDir: false,
   },
   images: {
     // required by static generation

@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=https://json.schemastore.org/taskfile.json
+---
+version: "3"
+
+tasks:
+  default:
+    desc: Show help
+    aliases: [h]
+    silent: true
+    cmds:
+      - task -l --sort alphanumeric
+
+  install:
+    desc: install
+    aliases: [i]
+    run: once
+    sources:
+      - package.json
+      - pnpm-lock.yaml
+      - pnpm-workspace.yaml
+    cmds:
+      - ni
+      - pnpm approve-builds
+
+  run:
+    desc: Run as dec
+    aliases: [r,dev]
+    dotenv: [.env]
+    cmds:
+      - task: install
+      - nr --silent dev
+
+  build:
+    desc: build
+    aliases: [b]
+    dotenv: [.env]
+    cmds:
+      - task: install
+      - pnpm run build

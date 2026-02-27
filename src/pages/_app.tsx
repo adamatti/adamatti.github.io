@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
 
 	useEffect(() => {
 		// FIXME remove hardcode values
-		hotjar.initialize(1141202, 6);
+		hotjar.initialize({ id: 1141202, sv: 6 });
 	}, []);
 
 	return (
