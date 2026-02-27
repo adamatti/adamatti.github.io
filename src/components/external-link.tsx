@@ -4,10 +4,10 @@ import type React from 'react';
 type ExternalLinkProps = React.ComponentProps<typeof Link>;
 
 export default function ExternalLink({
-	className,
-	...props
+  className,
+  ...props
 }: ExternalLinkProps) {
-	return (
-		<Link {...props} target="_blank" className={`external-link ${className}`} />
-	);
+  return (
+    <Link {...props} className={`external-link ${className}`} target="_blank" />
+  );
 }

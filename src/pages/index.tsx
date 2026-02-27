@@ -6,14 +6,14 @@ import MainStacks from '~/components/home/main-tech-section';
 import { query } from '~/server/graphql';
 import type { Technology } from '~/types';
 
-interface StaticPropsResult {
-	items: Technology[];
-	countEvents: number;
-	countVideos: number;
-}
+type StaticPropsResult = {
+  countEvents: number;
+  countVideos: number;
+  items: Technology[];
+};
 
 export async function getStaticProps(): Promise<{ props: StaticPropsResult }> {
-	const q = `items:allTeches(filter: {q: "love"}) {
+  const q = `items:allTeches(filter: {q: "love"}) {
     id name color image tags since
   }
   eventsMeta:_allEventsMeta{
@@ -23,32 +23,32 @@ export async function getStaticProps(): Promise<{ props: StaticPropsResult }> {
     countVideos:count
   }`;
 
-	const {
-		items,
-		eventsMeta: { countEvents },
-		videosMeta: { countVideos },
-	} = await query(q);
+  const {
+    items,
+    eventsMeta: { countEvents },
+    videosMeta: { countVideos },
+  } = await query(q);
 
-	return {
-		props: {
-			items,
-			countEvents,
-			countVideos,
-		},
-	};
+  return {
+    props: {
+      items,
+      countEvents,
+      countVideos,
+    },
+  };
 }
 
 export default function Home({
-	items,
-	countEvents,
-	countVideos,
+  items,
+  countEvents,
+  countVideos,
 }: StaticPropsResult): ReactElement {
-	return (
-		<>
-			<AboutMeSection />
-			<HightlightsSection countEvents={countEvents} countVideos={countVideos} />
-			<MainStacks items={items} />
-			<AboutThisPageSection />
-		</>
-	);
+  return (
+    <>
+      <AboutMeSection />
+      <HightlightsSection countEvents={countEvents} countVideos={countVideos} />
+      <MainStacks items={items} />
+      <AboutThisPageSection />
+    </>
+  );
 }

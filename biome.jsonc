@@ -1,0 +1,37 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.4.4/schema.json",
+    "extends": [
+        "ultracite/core"
+    ],
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "single"
+        }
+    },
+    "linter": {
+        "rules": {
+            "a11y": {
+                "useAltText": "off",
+                "noLabelWithoutControl": "off"
+            },
+            "correctness": {
+                "useImageSize": "off"
+            },
+            "performance": {
+                "noAccumulatingSpread": "warn"
+            },
+            "suspicious": {
+                "noConsole": "off",
+                "noExplicitAny": "warn"
+            },
+            "style": {
+                "useConsistentTypeDefinitions": {
+                    "level": "error",
+                    "options": {
+                        "style": "type"
+                    }
+                }
+            }
+        }
+    }
+}

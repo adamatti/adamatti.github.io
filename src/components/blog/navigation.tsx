@@ -2,52 +2,52 @@ import Link from 'next/link';
 import type { ReactElement } from 'react';
 import { HiArrowLeft, HiArrowRight } from 'react-icons/hi';
 
-interface PostInfo {
-    slug: string;
-    title: string;
-}
+type PostInfo = {
+  slug: string;
+  title: string;
+};
 
-interface BlogNavigationProps {
-    prevPost?: PostInfo;
-    nextPost?: PostInfo;
-}
+type BlogNavigationProps = {
+  nextPost?: PostInfo;
+  prevPost?: PostInfo;
+};
 
 export default function BlogNavigation({
-    prevPost,
-    nextPost,
+  prevPost,
+  nextPost,
 }: BlogNavigationProps): ReactElement {
-    return (
-        <div className="flex justify-between items-center py-4 border-t border-b border-gray-200 dark:border-gray-700">
-            <div className="w-1/3 text-left">
-                {prevPost && (
-                    <Link
-                        href={`/blog/posts/${prevPost.slug}`}
-                        className="link flex items-center gap-2"
-                        title={prevPost.title}
-                    >
-                        <HiArrowLeft /> Previous
-                    </Link>
-                )}
-            </div>
-            <div className="w-1/3 text-center flex justify-center gap-4">
-                <Link href="/blog" className="link">
-                    Home
-                </Link>
-                <Link href="/blog/tags" className="link">
-                    All Tags
-                </Link>
-            </div>
-            <div className="w-1/3 text-right flex justify-end">
-                {nextPost && (
-                    <Link
-                        href={`/blog/posts/${nextPost.slug}`}
-                        className="link flex items-center gap-2"
-                        title={nextPost.title}
-                    >
-                        Next <HiArrowRight />
-                    </Link>
-                )}
-            </div>
-        </div>
-    );
+  return (
+    <div className="flex items-center justify-between border-gray-200 border-t border-b py-4 dark:border-gray-700">
+      <div className="w-1/3 text-left">
+        {prevPost && (
+          <Link
+            className="link flex items-center gap-2"
+            href={`/blog/posts/${prevPost.slug}`}
+            title={prevPost.title}
+          >
+            <HiArrowLeft /> Previous
+          </Link>
+        )}
+      </div>
+      <div className="flex w-1/3 justify-center gap-4 text-center">
+        <Link className="link" href="/blog">
+          Home
+        </Link>
+        <Link className="link" href="/blog/tags">
+          All Tags
+        </Link>
+      </div>
+      <div className="flex w-1/3 justify-end text-right">
+        {nextPost && (
+          <Link
+            className="link flex items-center gap-2"
+            href={`/blog/posts/${nextPost.slug}`}
+            title={nextPost.title}
+          >
+            Next <HiArrowRight />
+          </Link>
+        )}
+      </div>
+    </div>
+  );
 }

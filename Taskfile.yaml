@@ -37,3 +37,10 @@ tasks:
     cmds:
       - task: install
       - pnpm run build
+
+  lint:
+    desc: lint
+    aliases: [l]
+    cmds:
+      - task: install
+      - pnpm exec biome check --write ./src --diagnostic-level=error
