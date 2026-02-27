@@ -1,5 +1,6 @@
 import '~/styles/globals.scss';
 import { GoogleTagManager } from '@next/third-parties/google';
+import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { type ReactElement, useEffect } from 'react';
@@ -19,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
 	}, []);
 
 	return (
-		<>
+		<ThemeProvider attribute="class">
 			<Head>
 				<title>{title}</title>
 				<meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -27,18 +28,20 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<TailwindHacks />
-			<div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-				<div className="flex h-screen flex-col justify-between">
-					{!disableLayout && <Header />}
-					<main className="mb-auto">
-						<Component {...pageProps} />
-					</main>
-					{!disableLayout && <Footer />}
+			<div className="min-h-screen bg-white text-black transition-colors duration-300 dark:bg-gray-900 dark:text-white">
+				<div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+					<div className="flex min-h-screen flex-col justify-between">
+						{!disableLayout && <Header />}
+						<main className="mb-auto">
+							<Component {...pageProps} />
+						</main>
+						{!disableLayout && <Footer />}
+					</div>
 				</div>
 			</div>
 			{process.env.NODE_ENV === 'production' && (
 				<GoogleTagManager gtmId="G-HRDZ9LVQZW" />
 			)}
-		</>
+		</ThemeProvider>
 	);
 }

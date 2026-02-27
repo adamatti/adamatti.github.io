@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { ReactElement } from 'react';
 import { SHOW_RESUME } from '~/config';
+import ThemeToggle from './theme-toggle';
 
 function LinkHeader(args: {
 	href: string;
@@ -27,7 +28,7 @@ export default function Header(): ReactElement {
 			>
 				Marcelo Adamatti
 			</Link>
-			<div className="flex items-center text-base leading-5">
+			<div className="flex items-center text-base leading-5 ml-auto sm:ml-0">
 				<div className="hidden sm:block">
 					{SHOW_RESUME && <LinkHeader href="/resume">Resume</LinkHeader>}
 					<LinkHeader href="/blog">Blog</LinkHeader>
@@ -38,6 +39,7 @@ export default function Header(): ReactElement {
 						Twitter
 					</LinkHeader>
 				</div>
+				<ThemeToggle />
 			</div>
 		</header>
 	);

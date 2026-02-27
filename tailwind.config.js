@@ -4,6 +4,7 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx}',
     // 'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
+  darkMode: 'class',
   theme: {
     extend: {},
   },
@@ -12,4 +13,7 @@ module.exports = {
     // require('flowbite/plugin')
     require('daisyui'),
   ],
+  daisyui: {
+    themes: false,
+  },
 };

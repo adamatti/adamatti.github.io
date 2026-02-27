@@ -53,10 +53,10 @@ export default function BlogPage({
 }: { tag: string; posts: BlogPost[] }): ReactElement {
 	return (
 		<>
-			<div className="my-3">
+			<div className="my-3 text-slate-700 dark:text-slate-300">
 				Posts with tag <b>{tag}</b>
 			</div>
-			<div className="my-3">
+			<div className="my-3 text-sm text-slate-500 dark:text-slate-400 italic">
 				Note: consider this page as a MVP, I still want to improve the style
 			</div>
 			<ShowPosts posts={posts} />

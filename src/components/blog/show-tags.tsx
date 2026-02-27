@@ -13,7 +13,7 @@ export default function ShowTags({ tags }: { tags: string[] }): ReactElement {
 				return (
 					<>
 						{index > 0 && ', '}
-						<Link key={t} href={`/blog/tags/${t}`}>
+						<Link key={t} href={`/blog/tags/${t}`} className="link">
 							{t}
 						</Link>
 					</>

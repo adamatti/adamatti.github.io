@@ -5,15 +5,15 @@ import ShowTags from './show-tags';
 
 function PostCard({ post: p }: { post: BlogPost }): ReactElement {
 	return (
-		<div className="border border-slate-200 p-4 rounded-md shadow-md bg-white">
+		<div className="border border-slate-200 dark:border-slate-700 p-4 rounded-md shadow-md bg-white dark:bg-gray-800 transition-colors duration-300">
 			<Link href={`/blog/posts/${p.slug}`} className="link">
 				<h2 className="font-bold">{p.title}</h2>
 			</Link>
-			<p className="text-sm text-slate-400">
+			<p className="text-sm text-slate-400 dark:text-slate-500">
 				{p.dateString}
 				<ShowTags tags={p.tags} />
 			</p>
-			<p className="text-slate-700">{p.summary}</p>
+			<p className="text-slate-700 dark:text-slate-300">{p.summary}</p>
 		</div>
 	);
 }

@@ -13,7 +13,7 @@ function TechCard({
 	const nameWithLink = (
 		<Link
 			href={`/technologies/${t.name.toLocaleLowerCase()}`}
-			className="text-black"
+			className="text-inherit dark:text-white"
 		>
 			{t.name}
 		</Link>
@@ -21,7 +21,7 @@ function TechCard({
 
 	return (
 		<div
-			className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${color}`}
+			className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg bg-white dark:bg-gray-800 border dark:border-gray-700 transition-colors duration-300 w-full sm:w-40 ${color}`}
 		>
 			<Image
 				className="mx-auto"
@@ -98,7 +98,7 @@ export default function ShowTechs({
 					</div>
 				</div>
 			)}
-			<div className="w-auto grid grid-cols-2 sm:grid-cols-5 gap-8 text-center py-8 px-12 sm:px-0">
+			<div className="w-auto flex flex-wrap justify-center gap-8 text-center py-8 px-12 sm:px-0">
 				{filtered?.map((i) => (
 					<TechCard key={i.id} tech={i} addLink={addLinks} />
 				))}

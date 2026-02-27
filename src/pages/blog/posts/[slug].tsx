@@ -6,6 +6,8 @@ import type { BlogPost } from '~/types';
 interface PageProps {
 	slug: string;
 	post: BlogPost;
+	prevPost?: { slug: string; title: string };
+	nextPost?: { slug: string; title: string };
 }
 
 interface StaticPathResult {
@@ -32,15 +34,36 @@ export function getStaticPaths(): {
 export function getStaticProps({
 	params: { slug },
 }: { params: StaticPathResult }): { props: PageProps } {
-	const post = getPost(slug) as BlogPost;
+	const posts = getPosts();
+	const postIndex = posts.findIndex((p) => p.slug === slug);
+	const post = posts[postIndex];
+
+	// Posts are sorted descending by date, so index - 1 is newer (next), index + 1 is older (prev)
+	const nextPost = postIndex > 0 ? posts[postIndex - 1] : undefined;
+	const prevPost = postIndex < posts.length - 1 ? posts[postIndex + 1] : undefined;
+
+	const props: PageProps = {
+		slug,
+		post,
+	};
+
+	if (prevPost) {
+		props.prevPost = { slug: prevPost.slug, title: prevPost.title };
+	}
+
+	if (nextPost) {
+		props.nextPost = { slug: nextPost.slug, title: nextPost.title };
+	}
+
 	return {
-		props: {
-			slug,
-			post,
-		},
+		props,
 	};
 }
 
-export default function BlogPostPage({ post }: PageProps): ReactElement {
-	return <ShowPost post={post} />;
+export default function BlogPostPage({
+	post,
+	prevPost,
+	nextPost,
+}: PageProps): ReactElement {
+	return <ShowPost post={post} prevPost={prevPost} nextPost={nextPost} />;
 }

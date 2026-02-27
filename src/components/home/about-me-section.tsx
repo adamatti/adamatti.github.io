@@ -5,6 +5,8 @@ import Color from '../color';
 import Image from '../next-custom/image';
 import SocialLink from '../social-link';
 
+const yearsSince = (year: number) => new Date().getFullYear() - year;
+
 export default function AboutMeSection(): ReactElement {
 	return (
 		<div className="mx-auto max-w-screen-lg py-6">
@@ -21,9 +23,10 @@ export default function AboutMeSection(): ReactElement {
 			</div>
 			<div className="section-text">
 				<p>
-					I have +20 yrs as <Color>senior backend software engineer</Color>,
-					+10yrs as <Color>tech lead</Color> with <Color>management</Color>{' '}
-					experience, do speeches/coordinate events, +5 yrs as dad (one boy). I
+					I have +{yearsSince(2000)} yrs as{' '}
+					<Color>senior backend software engineer</Color>,
+					+{yearsSince(2014)}yrs as <Color>tech lead</Color> with <Color>management</Color>{' '}
+					experience, do speeches/coordinate events, 2 times dad (two boy, {yearsSince(2018)} and {yearsSince(2025)} yrs). I
 					am a very pragmatic engineer that loves to deliver value.
 				</p>
 				<p>
@@ -84,6 +87,6 @@ export default function AboutMeSection(): ReactElement {
 					icon="facebook"
 				/>
 			</div>
-		</div>
+		</div >
 	);
 }
