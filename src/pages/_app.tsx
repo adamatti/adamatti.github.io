@@ -20,7 +20,9 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
     hotjar.initialize({ id: 1_141_202, sv: 6 });
   }, []);
   const { pathname } = useRouter();
-  const forcedTheme = forceLightModePaths.includes(pathname) ? 'light' : undefined;
+  const forcedTheme = forceLightModePaths.includes(pathname)
+    ? 'light'
+    : undefined;
 
   return (
     <ThemeProvider attribute="class" forcedTheme={forcedTheme}>
