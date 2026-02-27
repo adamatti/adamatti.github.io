@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { ReactElement } from 'react';
+import { Fragment, type ReactElement } from 'react';
 
 export default function ShowTags({
   tags,
@@ -15,12 +15,12 @@ export default function ShowTags({
       - [
       {tags.map((t, index) => {
         return (
-          <>
+          <Fragment key={t}>
             {index > 0 && ', '}
-            <Link className="link" href={`/blog/tags/${t}`} key={t}>
+            <Link className="link" href={`/blog/tags/${t}`}>
               {t}
             </Link>
-          </>
+          </Fragment>
         );
       })}
       ]
