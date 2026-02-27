@@ -24,17 +24,23 @@ function TechCard({
 
   return (
     <div
-      className={`w-full rounded-lg border bg-white py-2 shadow-md transition-colors duration-300 duration-500 hover:scale-105 sm:w-40 dark:border-gray-700 dark:bg-gray-800 ${color}`}
+      className={`grid w-full grid-cols-[48px_auto] items-center gap-4 py-2 sm:block sm:w-40 sm:rounded-lg sm:border sm:bg-white sm:shadow-md sm:transition-all sm:duration-300 sm:hover:scale-105 dark:sm:border-gray-700 dark:sm:bg-gray-800 ${color}`}
     >
-      <Image
-        alt={t.name}
-        className="mx-auto"
-        height={80}
-        src={`/assets/icons/${t.image}`}
-        width={80}
-      />
-      <p className="mt-4 capitalize">{addLink ? nameWithLink : t.name}</p>
-      <p>{hdate.relativeTime(t.since).replaceAll(' ago', '')}</p>
+      <div className="flex h-12 w-12 items-center justify-center sm:mx-auto sm:h-20 sm:w-20">
+        <Image
+          alt={t.name}
+          className="h-12 w-12 sm:h-20 sm:w-20"
+          src={`/assets/icons/${t.image}`}
+        />
+      </div>
+      <div className="text-left sm:mt-4 sm:text-center">
+        <p className="font-semibold capitalize sm:text-base">
+          {addLink ? nameWithLink : t.name}
+        </p>
+        <p className="text-gray-500 text-sm sm:text-gray-900 dark:text-white">
+          {hdate.relativeTime(t.since).replaceAll(' ago', '')}
+        </p>
+      </div>
     </div>
   );
 }
@@ -93,18 +99,15 @@ export default function ShowTechs({
   return (
     <>
       {filters && (
-        <div className="flex justify-between">
-          <div />
-          <div className="grid grid-cols-7 gap-1">
-            <FilterButton isShowAll={true} key="all" label="all" />
+        <div className="flex flex-wrap justify-center gap-2">
+          <FilterButton isShowAll={true} key="all" label="all" />
 
-            {tags.map((t) => (
-              <FilterButton isShowAll={false} key={t} label={t} />
-            ))}
-          </div>
+          {tags.map((t) => (
+            <FilterButton isShowAll={false} key={t} label={t} />
+          ))}
         </div>
       )}
-      <div className="flex w-auto flex-wrap justify-center gap-8 px-12 py-8 text-center sm:px-0">
+      <div className="flex flex-col gap-2 py-4 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-8 sm:px-0 sm:py-8 sm:text-center">
         {filtered?.map((i) => (
           <TechCard addLink={addLinks} key={i.id} tech={i} />
         ))}

@@ -44,3 +44,11 @@ tasks:
     cmds:
       - task: install
       - pnpm exec biome check --write ./src --diagnostic-level=error
+
+  check:
+    desc: check
+    aliases: [c]
+    cmds:
+      - task: install
+      - task: lint
+      - task: build

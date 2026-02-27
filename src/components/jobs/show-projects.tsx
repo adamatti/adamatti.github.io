@@ -26,20 +26,27 @@ export default function ShowProjects({
       <div>
         {projects.map((p: Project) => {
           return (
-            <div className="grid grid-cols-[auto_200px] gap-2 py-1" key={p.id}>
+            <div
+              className="flex flex-col gap-2 py-1 sm:grid sm:grid-cols-[auto_200px]"
+              key={p.id}
+            >
               <div>
-                <div className="underline">{p.title}</div>
+                <div className="font-semibold underline">{p.title}</div>
                 <div>
-                  <div>{p.description}</div>
+                  <div className="text-sm sm:text-base">{p.description}</div>
                   {p.results && (
-                    <div className="flex gap-1">
-                      <div className="font-semibold">Results:</div>
-                      <div>{p.results}</div>
+                    <div className="mt-1 flex flex-col gap-0 sm:flex-row sm:gap-1">
+                      <div className="font-semibold text-sm sm:text-base">
+                        Results:
+                      </div>
+                      <div className="text-sm italic sm:text-base">
+                        {p.results}
+                      </div>
                     </div>
                   )}
                 </div>
               </div>
-              <div className="align-text-bottom text-gray-500 text-sm">
+              <div className="align-text-bottom text-gray-500 text-xs italic sm:text-sm sm:not-italic">
                 {p.keywords.join(', ')}
               </div>
             </div>

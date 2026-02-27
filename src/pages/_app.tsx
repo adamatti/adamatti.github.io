@@ -2,6 +2,7 @@ import '~/styles/globals.scss';
 import { GoogleTagManager } from '@next/third-parties/google';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { ThemeProvider } from 'next-themes';
 import { type ReactElement, useEffect } from 'react';
 import { hotjar } from 'react-hotjar';
@@ -10,17 +11,19 @@ import Header from '~/components/layout/header';
 import TailwindHacks from '~/components/layout/tailwind-hacks';
 
 const title = 'Marcelo Adamatti Portfolio';
+const forceLightModePaths = ['/resume'];
 
 export default function App({ Component, pageProps }: AppProps): ReactElement {
   const disableLayout = (Component as any).disableLayout ?? false;
 
   useEffect(() => {
-    // FIXME remove hardcode values
     hotjar.initialize({ id: 1_141_202, sv: 6 });
   }, []);
+  const { pathname } = useRouter();
+  const forcedTheme = forceLightModePaths.includes(pathname) ? 'light' : undefined;
 
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute="class" forcedTheme={forcedTheme}>
       <Head>
         <title>{title}</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />

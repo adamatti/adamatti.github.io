@@ -8,10 +8,10 @@ function ShowTags({ project: p }: { project: PetProject }): ReactElement {
     .filter((i) => !!i)
     .filter((e, index, self) => index === self.indexOf(e)); // remove duplicates
   return (
-    <div className="grid grid-cols-5 place-content-center gap-2">
+    <div className="mt-4 flex flex-wrap gap-2">
       {tags.map((t) => (
         <div
-          className="bordered w-20 rounded bg-cyan-400 text-center text-white text-xs"
+          className="bordered whitespace-nowrap rounded bg-cyan-500 px-2 py-0.5 font-medium text-[10px] text-white"
           key={t}
         >
           {t}
@@ -23,16 +23,24 @@ function ShowTags({ project: p }: { project: PetProject }): ReactElement {
 
 function PetProjectCard({ project: p }: { project: PetProject }): ReactElement {
   return (
-    <div className="rounded-md border border-slate-200 bg-white p-4 shadow-md">
-      <div className="grid grid-cols-2">
-        <div>
-          <Link className="link" href={p.url} target="_blank">
-            <h2 className="font-bold">{p.name}</h2>
+    <div className="mb-8 rounded-xl border border-gray-200 bg-white p-6 shadow-md transition-colors duration-300 dark:border-gray-700 dark:bg-gray-800">
+      <div className="flex flex-col">
+        <div className="mb-2">
+          <Link
+            className="link no-underline hover:underline"
+            href={p.url}
+            target="_blank"
+          >
+            <h2 className="font-bold text-gray-900 text-xl uppercase tracking-tight dark:text-white">
+              {p.name}
+            </h2>
           </Link>
-          <p className="text-slate-400 text-sm">{p.createdAt}</p>
-          <p className="text-slate-700">
-            <Markdown>{p.description ?? ''}</Markdown>
+          <p className="mt-1 text-gray-500 text-xs dark:text-gray-400">
+            {p.createdAt}
           </p>
+        </div>
+        <div className="mt-2 text-gray-700 text-sm leading-relaxed dark:text-gray-300">
+          <Markdown>{p.description ?? ''}</Markdown>
         </div>
         <ShowTags project={p} />
       </div>
@@ -46,7 +54,7 @@ export default function ShowPetProjects({
   projects: PetProject[];
 }): ReactElement {
   return (
-    <div>
+    <div className="py-6">
       {projects.map((p) => (
         <PetProjectCard key={p.id} project={p} />
       ))}

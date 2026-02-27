@@ -51,12 +51,12 @@ export default function EventsPage({
     <div>
       <p>Disclaimer: still working to find the best way to represent it</p>
       <input
-        className="input input-bordered w-full"
+        className="input input-bordered w-full bg-white outline-none transition-colors focus:border-cyan-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:focus:border-cyan-400"
         onChange={handleChange}
         placeholder="Filter here"
         type="text"
       />
-      <div className="grid w-auto grid-cols-3 gap-8 px-12 py-8 text-center sm:px-0">
+      <div className="grid w-auto grid-cols-1 gap-8 px-4 py-8 text-center sm:px-0 md:grid-cols-2 lg:grid-cols-3">
         {filteredEvents.map((e) => (
           <EventCard event={e} key={e.id} />
         ))}
