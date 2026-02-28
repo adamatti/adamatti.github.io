@@ -6,6 +6,7 @@ import LatestPostsSection from '~/components/home/latest-posts-section';
 import MainStacks from '~/components/home/main-tech-section';
 import { getPosts } from '~/server/blog-posts';
 import { query } from '~/server/graphql';
+import { generateRssFeed } from '~/server/rss';
 import type { BlogPost, Technology } from '~/types';
 
 type StaticPropsResult = {
@@ -33,6 +34,8 @@ export async function getStaticProps(): Promise<{ props: StaticPropsResult }> {
   } = await query(q);
 
   const latestPosts = getPosts().slice(0, 3);
+
+  generateRssFeed();
 
   return {
     props: {

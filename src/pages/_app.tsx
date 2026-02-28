@@ -31,6 +31,12 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content={title} name="description" />
         <link href="/favicon.ico" rel="icon" />
+        <link
+          href="/rss.xml"
+          rel="alternate"
+          title="Adamatti Blog RSS Feed"
+          type="application/rss+xml"
+        />
       </Head>
       <TailwindHacks />
       <div className="min-h-screen bg-white text-black transition-colors duration-300 dark:bg-gray-900 dark:text-white">
