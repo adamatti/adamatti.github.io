@@ -1,0 +1,386 @@
+<?xml version="1.0" ?>
+<rss version="2.0">
+  <channel>
+    <title>Adamatti Blog</title>
+    <link>https://adamatti.github.io</link>
+    <description>Latest blog posts</description>
+    <managingEditor>adamatti@gmail.com (Marcelo Adamatti)</managingEditor>
+    <webMaster>adamatti@gmail.com (Marcelo Adamatti)</webMaster>
+    <item>
+      <title><![CDATA[Diagram tools]]></title>
+      <link>https://adamatti.github.io/blog/posts/2025-09-03-diagrams</link>
+      <guid>https://adamatti.github.io/blog/posts/2025-09-03-diagrams</guid>
+      <pubDate>Wed, 03 Sep 2025 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[You need it from time to time]]></description>
+    </item>
+    <item>
+      <title><![CDATA[People, process, technology, business]]></title>
+      <link>https://adamatti.github.io/blog/posts/2025-08-05-4-pillars</link>
+      <guid>https://adamatti.github.io/blog/posts/2025-08-05-4-pillars</guid>
+      <pubDate>Tue, 05 Aug 2025 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[Things leaders should keep in their radar]]></description>
+    </item>
+    <item>
+      <title><![CDATA[The Tiger, the lion and the panther are harmless animals.]]></title>
+      <link>https://adamatti.github.io/blog/posts/2025-08-05-perception</link>
+      <guid>https://adamatti.github.io/blog/posts/2025-08-05-perception</guid>
+      <pubDate>Tue, 05 Aug 2025 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[- Bertrand Russell]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Go features by version]]></title>
+      <link>https://adamatti.github.io/blog/posts/2025-07-31-go-features</link>
+      <guid>https://adamatti.github.io/blog/posts/2025-07-31-go-features</guid>
+      <pubDate>Thu, 31 Jul 2025 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[A summary of which major features appeared in which versions of Go]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Memcached]]></title>
+      <link>https://adamatti.github.io/blog/posts/2025-07-16-memcached</link>
+      <guid>https://adamatti.github.io/blog/posts/2025-07-16-memcached</guid>
+      <pubDate>Wed, 16 Jul 2025 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[Pet project, sharing findings]]></description>
+    </item>
+    <item>
+      <title><![CDATA[When you discover you’re riding a dead horse, the best strategy is to dismount.]]></title>
+      <link>https://adamatti.github.io/blog/posts/2025-06-11-dead-horse</link>
+      <guid>https://adamatti.github.io/blog/posts/2025-06-11-dead-horse</guid>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[- an old Dakota tribal wisdom]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Before you heal someone, ask him if he's willing to give up the things that make him sick.]]></title>
+      <link>https://adamatti.github.io/blog/posts/2025-06-11-hippocrates</link>
+      <guid>https://adamatti.github.io/blog/posts/2025-06-11-hippocrates</guid>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[- Hippocrates]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Portugues] - Procurar vagas na gringa]]></title>
+      <link>https://adamatti.github.io/blog/posts/2025-05-22-vagas-na-gringa</link>
+      <guid>https://adamatti.github.io/blog/posts/2025-05-22-vagas-na-gringa</guid>
+      <pubDate>Thu, 22 May 2025 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[Dicas rápidas para quem é CLT e quer ganhar mais lá fora]]></description>
+    </item>
+    <item>
+      <title><![CDATA[AI Leaderboards]]></title>
+      <link>https://adamatti.github.io/blog/posts/2025-05-15-ai-leaderboards</link>
+      <guid>https://adamatti.github.io/blog/posts/2025-05-15-ai-leaderboards</guid>
+      <pubDate>Thu, 15 May 2025 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[Check which is the top LLM of the day]]></description>
+    </item>
+    <item>
+      <title><![CDATA[The big flood from May/2024]]></title>
+      <link>https://adamatti.github.io/blog/posts/2025-05-05-flood</link>
+      <guid>https://adamatti.github.io/blog/posts/2025-05-05-flood</guid>
+      <pubDate>Mon, 05 May 2025 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[Canoas, RS]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Good judgment comes from experience, and experience comes from bad judgment.]]></title>
+      <link>https://adamatti.github.io/blog/posts/2025-05-02-experience</link>
+      <guid>https://adamatti.github.io/blog/posts/2025-05-02-experience</guid>
+      <pubDate>Fri, 02 May 2025 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[- Rita Mae Brown]]></description>
+    </item>
+    <item>
+      <title><![CDATA[MCP sample - CLI]]></title>
+      <link>https://adamatti.github.io/blog/posts/2025-04-28-mcp-cli</link>
+      <guid>https://adamatti.github.io/blog/posts/2025-04-28-mcp-cli</guid>
+      <pubDate>Mon, 28 Apr 2025 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[A basic MCP sample for CLI with typescript]]></description>
+    </item>
+    <item>
+      <title><![CDATA[MCP sample - HTTP]]></title>
+      <link>https://adamatti.github.io/blog/posts/2025-04-28-mcp-http</link>
+      <guid>https://adamatti.github.io/blog/posts/2025-04-28-mcp-http</guid>
+      <pubDate>Mon, 28 Apr 2025 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[A basic MCP http server sample with typescript]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Vector DBs]]></title>
+      <link>https://adamatti.github.io/blog/posts/2025-04-28-vector-dbs</link>
+      <guid>https://adamatti.github.io/blog/posts/2025-04-28-vector-dbs</guid>
+      <pubDate>Mon, 28 Apr 2025 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[Just a list of vector dbs]]></description>
+    </item>
+    <item>
+      <title><![CDATA[The system design universe]]></title>
+      <link>https://adamatti.github.io/blog/posts/2025-02-20-system-design</link>
+      <guid>https://adamatti.github.io/blog/posts/2025-02-20-system-design</guid>
+      <pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[Great info graph from Shalini]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Ghostty]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-12-31-ghostty</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-12-31-ghostty</guid>
+      <pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[terminal emulator]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Cursor]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-11-29-cursor</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-11-29-cursor</guid>
+      <pubDate>Fri, 29 Nov 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[The AI code editor]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Memory Leak in nodejs/javascript]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-11-29-memory-leak</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-11-29-memory-leak</guid>
+      <pubDate>Fri, 29 Nov 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[Some steps for finding/troubleshooting it]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Monstache]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-11-27-monstache</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-11-27-monstache</guid>
+      <pubDate>Wed, 27 Nov 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[A tool to stream data from mongodb to elasticsearch]]></description>
+    </item>
+    <item>
+      <title><![CDATA[About preparation]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-11-22-preparation</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-11-22-preparation</guid>
+      <pubDate>Fri, 22 Nov 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[- Abraham Lincoln]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Complex Problems]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-11-12-complexity</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-11-12-complexity</guid>
+      <pubDate>Tue, 12 Nov 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[- H.L. Mencken]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Fish Shell]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-11-11-fish</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-11-11-fish</guid>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[A new shell to rule them all]]></description>
+    </item>
+    <item>
+      <title><![CDATA[You’ve launched too late]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-11-07-mvp</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-11-07-mvp</guid>
+      <pubDate>Thu, 07 Nov 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[- Reid Hoffman]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Athletes Go Bankrupt]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-11-04-bankrupt</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-11-04-bankrupt</guid>
+      <pubDate>Mon, 04 Nov 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[A shocking fact]]></description>
+    </item>
+    <item>
+      <title><![CDATA[OrbStack]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-10-28-orbstack</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-10-28-orbstack</guid>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[A docker-desktop replacement]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Kind - k8s on local]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-10-22-kind</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-10-22-kind</guid>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[Useful if you need to test ingress changes like me]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Software Gardener]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-10-01-gardeners</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-10-01-gardeners</guid>
+      <pubDate>Tue, 01 Oct 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[Gardener x Engineer]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Cargo Cult]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-09-27-cargo-cult</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-09-27-cargo-cult</guid>
+      <pubDate>Fri, 27 Sep 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[You need to know the "why" to receive the benefits from the Gods]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Mise: a version manager]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-09-24-mise</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-09-24-mise</guid>
+      <pubDate>Tue, 24 Sep 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[A replacement for gvm, nvm, etc]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Salary as software engineer]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-09-11-salary</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-09-11-salary</guid>
+      <pubDate>Wed, 11 Sep 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[Just sharing some links]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Cloudflare workers]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-09-10-cloudflare</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-09-10-cloudflare</guid>
+      <pubDate>Tue, 10 Sep 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[Just created my hello world there]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Yarn Classic]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-09-06-yarn</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-09-06-yarn</guid>
+      <pubDate>Fri, 06 Sep 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[It is time to move on]]></description>
+    </item>
+    <item>
+      <title><![CDATA[People will never forget how you made them feel]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-09-04-feel</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-09-04-feel</guid>
+      <pubDate>Wed, 04 Sep 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[- Maya Angelou]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Typescript Lib - Neverthrow]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-08-19-neverthrow</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-08-19-neverthrow</guid>
+      <pubDate>Mon, 19 Aug 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[Encode failure into your program]]></description>
+    </item>
+    <item>
+      <title><![CDATA[AWS Granted]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-08-16-aws-granted</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-08-16-aws-granted</guid>
+      <pubDate>Fri, 16 Aug 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[A tool to easily access AWS roles]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Everything You Have Ever Wanted Is On The Other Side Of Fear]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-08-06-fear</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-08-06-fear</guid>
+      <pubDate>Tue, 06 Aug 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[- George Addair]]></description>
+    </item>
+    <item>
+      <title><![CDATA[DORA metrics]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-07-26-dora</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-07-26-dora</guid>
+      <pubDate>Fri, 26 Jul 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[A metric from Google teams]]></description>
+    </item>
+    <item>
+      <title><![CDATA[CLT x PJ]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-04-22-clt</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-04-22-clt</guid>
+      <pubDate>Mon, 22 Apr 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[A manifest against CLT]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Taskfile - an alternative for Makefiles]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-04-18-taskfile</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-04-18-taskfile</guid>
+      <pubDate>Thu, 18 Apr 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[A 5 minutes tutorial]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Makefiles - How to use them for automations]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-04-08-makefile</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-04-08-makefile</guid>
+      <pubDate>Mon, 08 Apr 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[A 5 minutes tutorial]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Vinejs - js validation lib]]></title>
+      <link>https://adamatti.github.io/blog/posts/2024-04-05-vinejs</link>
+      <guid>https://adamatti.github.io/blog/posts/2024-04-05-vinejs</guid>
+      <pubDate>Fri, 05 Apr 2024 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[An alternative to zod]]></description>
+    </item>
+    <item>
+      <title><![CDATA[TDC - API Track]]></title>
+      <link>https://adamatti.github.io/blog/posts/2023-12-30-tdc</link>
+      <guid>https://adamatti.github.io/blog/posts/2023-12-30-tdc</guid>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title><![CDATA[What happens when developers are (un)happy]]></title>
+      <link>https://adamatti.github.io/blog/posts/2023-07-04-happiness</link>
+      <guid>https://adamatti.github.io/blog/posts/2023-07-04-happiness</guid>
+      <pubDate>Tue, 04 Jul 2023 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[Great article/reflection about happiness]]></description>
+    </item>
+    <item>
+      <title><![CDATA[The Pyramid of Needs]]></title>
+      <link>https://adamatti.github.io/blog/posts/2023-03-27-pyramid-of-needs</link>
+      <guid>https://adamatti.github.io/blog/posts/2023-03-27-pyramid-of-needs</guid>
+      <pubDate>Mon, 27 Mar 2023 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[My insights on that topic]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Quarkus - a new try on native images]]></title>
+      <link>https://adamatti.github.io/blog/posts/2023-03-16-quarkus</link>
+      <guid>https://adamatti.github.io/blog/posts/2023-03-16-quarkus</guid>
+      <pubDate>Thu, 16 Mar 2023 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[A blazing fast spring competitor]]></description>
+    </item>
+    <item>
+      <title><![CDATA[How to unlock ChatGPT full potential]]></title>
+      <link>https://adamatti.github.io/blog/posts/2023-03-15-chatgpt-full-potential</link>
+      <guid>https://adamatti.github.io/blog/posts/2023-03-15-chatgpt-full-potential</guid>
+      <pubDate>Wed, 15 Mar 2023 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[a great prompt for better results]]></description>
+    </item>
+    <item>
+      <title><![CDATA[First Blog post]]></title>
+      <link>https://adamatti.github.io/blog/posts/2023-02-23-first</link>
+      <guid>https://adamatti.github.io/blog/posts/2023-02-23-first</guid>
+      <pubDate>Thu, 23 Feb 2023 00:00:00 GMT</pubDate>
+      <author>adamatti@gmail.com (Marcelo Adamatti)</author>
+      <description><![CDATA[Just a test post]]></description>
+    </item>
+  </channel>
+</rss>
