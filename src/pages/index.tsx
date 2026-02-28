@@ -2,14 +2,17 @@ import type { ReactElement } from 'react';
 import AboutMeSection from '~/components/home/about-me-section';
 import AboutThisPageSection from '~/components/home/about-this-page';
 import HightlightsSection from '~/components/home/hightlights-section';
+import LatestPostsSection from '~/components/home/latest-posts-section';
 import MainStacks from '~/components/home/main-tech-section';
+import { getPosts } from '~/server/blog-posts';
 import { query } from '~/server/graphql';
-import type { Technology } from '~/types';
+import type { BlogPost, Technology } from '~/types';
 
 type StaticPropsResult = {
   countEvents: number;
   countVideos: number;
   items: Technology[];
+  latestPosts: BlogPost[];
 };
 
 export async function getStaticProps(): Promise<{ props: StaticPropsResult }> {
@@ -29,11 +32,14 @@ export async function getStaticProps(): Promise<{ props: StaticPropsResult }> {
     videosMeta: { countVideos },
   } = await query(q);
 
+  const latestPosts = getPosts().slice(0, 3);
+
   return {
     props: {
       items,
       countEvents,
       countVideos,
+      latestPosts,
     },
   };
 }
@@ -42,11 +48,13 @@ export default function Home({
   items,
   countEvents,
   countVideos,
+  latestPosts,
 }: StaticPropsResult): ReactElement {
   return (
     <>
       <AboutMeSection />
       <HightlightsSection countEvents={countEvents} countVideos={countVideos} />
+      <LatestPostsSection posts={latestPosts} />
       <MainStacks items={items} />
       <AboutThisPageSection />
     </>
