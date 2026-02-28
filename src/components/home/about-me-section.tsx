@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactElement } from 'react';
+import { ffShowFacebook } from '~/feature-flags';
 import avatar from '../../../public/assets/avatar.png';
 import Color from '../color';
 import Image from '../next-custom/image';
@@ -83,10 +84,12 @@ export default function AboutMeSection(): ReactElement {
           icon="linkedin"
         />
         <SocialLink href="http://youtube.com/adamatti" icon="youtube" />
-        <SocialLink
-          href="https://www.facebook.com/marcelo.adamatti"
-          icon="facebook"
-        />
+        {ffShowFacebook && (
+          <SocialLink
+            href="https://www.facebook.com/marcelo.adamatti"
+            icon="facebook"
+          />
+        )}
       </div>
     </div>
   );

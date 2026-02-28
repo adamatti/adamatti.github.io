@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { ReactElement } from 'react';
-import { SHOW_RESUME } from '~/config';
+import { ffShowResume } from '~/feature-flags';
 import ThemeToggle from './theme-toggle';
 
 function LinkHeader(args: {
@@ -29,7 +29,7 @@ export default function Header(): ReactElement {
       </Link>
       <div className="ml-auto flex items-center text-base leading-5 sm:ml-0">
         <div className="flex items-center">
-          {SHOW_RESUME && <LinkHeader href="/resume">Resume</LinkHeader>}
+          {ffShowResume && <LinkHeader href="/resume">Resume</LinkHeader>}
           <LinkHeader href="/blog">Blog</LinkHeader>
           <LinkHeader href="https://github.com/adamatti" target="_blank">
             Github

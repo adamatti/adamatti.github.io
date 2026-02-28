@@ -9,6 +9,7 @@ import {
   FaWhatsapp,
   FaYoutube,
 } from 'react-icons/fa';
+import { ffShowFacebook } from '~/feature-flags';
 
 function FooterLink(args: {
   href: string;
@@ -43,9 +44,11 @@ export default function Footer(): ReactElement {
           <FooterLink href="https://github.com/adamatti">
             <FaGithub />
           </FooterLink>
-          <FooterLink href="https://www.facebook.com/marcelo.adamatti">
-            <FaFacebook />
-          </FooterLink>
+          {ffShowFacebook && (
+            <FooterLink href="https://www.facebook.com/marcelo.adamatti">
+              <FaFacebook />
+            </FooterLink>
+          )}
           <FooterLink href="http://twitter.com/adamatti">
             <FaTwitter />
           </FooterLink>

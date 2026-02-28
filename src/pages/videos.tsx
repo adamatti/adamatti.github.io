@@ -1,5 +1,6 @@
 import { type ChangeEvent, type ReactElement, useState } from 'react';
 import VideoCard from '~/components/video-card';
+import { ffShowWipComments } from '~/feature-flags';
 import { query } from '~/server/graphql';
 import type { Video } from '~/types';
 
@@ -52,9 +53,11 @@ export default function VideosPage({
 
   return (
     <div>
-      <p className="py-5">
-        Disclaimer: still working to find the best way to represent it
-      </p>
+      {ffShowWipComments && (
+        <p className="py-5">
+          Disclaimer: still working to find the best way to represent it
+        </p>
+      )}
       <input
         className="input input-bordered w-full bg-white outline-none transition-colors focus:border-cyan-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:focus:border-cyan-400"
         onChange={handleChange}

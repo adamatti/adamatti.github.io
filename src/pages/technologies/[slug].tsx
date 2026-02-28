@@ -6,7 +6,8 @@ import { ShowJobs } from '~/components/jobs/show-jobs';
 import ShowPetProjects from '~/components/show-pet-projects';
 import ShowTechs from '~/components/show-techs';
 import VideoCard from '~/components/video-card';
-import { SHOW_RESUME, technologiesToList } from '~/config';
+import { technologiesToList } from '~/config';
+import { ffShowResume } from '~/feature-flags';
 import { getPosts } from '~/server/blog-posts';
 import { query } from '~/server/graphql';
 import type {
@@ -150,7 +151,7 @@ function JobsSection({
       {jobs && jobs.length > 0 && (
         <Section title={`Companies that I worked with ${slug}`}>
           <ShowJobs jobs={jobs} />
-          {SHOW_RESUME && (
+          {ffShowResume && (
             <p className="mt-5 text-gray-500 dark:text-gray-400">
               Check all my resume at{' '}
               <Link className="link" href="/resume">

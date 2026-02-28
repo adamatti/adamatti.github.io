@@ -4,8 +4,6 @@ type Tech = {
   show?: boolean;
 };
 
-export const SHOW_RESUME = false;
-
 // removed 'java' as it conflicts with javascript. Use jvm instead
 export const technologiesToList: Tech[] = [
   { key: 'ai', category: 'Others' },
