@@ -5,6 +5,7 @@ import {
   FaFacebook,
   FaGithub,
   FaLinkedin,
+  FaRss,
   FaTwitter,
   FaWhatsapp,
   FaYoutube,
@@ -57,6 +58,9 @@ export default function Footer(): ReactElement {
           </FooterLink>
           <FooterLink href="https://wa.me/5551984253027">
             <FaWhatsapp />
+          </FooterLink>
+          <FooterLink href="/rss.xml">
+            <FaRss />
           </FooterLink>
         </div>
         <div className="text-gray-500 text-sm dark:text-gray-400">
