@@ -10,8 +10,6 @@
     "server": "json-graphql-server graphql-server/db.js",
     "test": "jest",
     "coverage": "jest --coverage",
-    "lint": "biome lint .",
-    "lint:staged": "biome lint",
     "prepare": "husky"
   },
   "dependencies": {
@@ -55,16 +53,10 @@
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
     "json-graphql-server": "^2.3.2",
-    "lint-staged": "^16.2.7",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "tailwindcss": "^3.2.7",
     "ultracite": "^7.2.4",
     "watch-cli": "^0.2.3"
-  },
-  "lint-staged": {
-    "*.{js,ts,jsx,tsx,json,jsonc}": [
-      "biome lint --write --no-errors-on-unmatched"
-    ]
   }
 }

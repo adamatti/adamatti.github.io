@@ -1,1 +1,1 @@
-nlx lint-staged
+task lint
