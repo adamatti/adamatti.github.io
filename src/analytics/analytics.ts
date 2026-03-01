@@ -1,3 +1,4 @@
+import { sendGTMEvent } from '@next/third-parties/google';
 import {
   ffUseAmplitude,
   ffUseGoogleAnalytics,
@@ -5,39 +6,47 @@ import {
 } from '../feature-flags';
 import amplitude from './amplitude';
 
-const emitGoogleAnalyticsEvent = async (
+// push events into GTM dataLayer via the helper from @next/third-parties
+const emitGoogleAnalyticsEvent = (
   eventName: string,
   eventData?: Record<string, any>
-) => {
+): Promise<void> => {
   if (
     ffUseGoogleAnalytics &&
     typeof window !== 'undefined' &&
-    (window as any).gtag
+    typeof sendGTMEvent === 'function'
+    //(window as any).gtag
   ) {
-    await (window as any).gtag('event', eventName, eventData);
+    // await (window as any).gtag('event', eventName, eventData);
+    sendGTMEvent({ event: eventName, ...eventData });
   }
+  return Promise.resolve();
 };
 
 const emitHotjarEvent = async (
   eventName: string,
   _eventData?: Record<string, any>
-) => {
+): Promise<void> => {
   if (!isLocal && typeof window !== 'undefined' && (window as any).hj) {
     await (window as any).hj('event', eventName);
   }
 };
 
-const emitAmplitudeEvent = async (
+const emitAmplitudeEvent = (
   eventName: string,
   eventData?: Record<string, any>
-) => {
+): Promise<void> => {
   // Amplitude autocapture should handle most events, but this can be used for custom ones if needed
   if (ffUseAmplitude) {
-    await amplitude.track(eventName, eventData);
+    amplitude.track(eventName, eventData);
   }
+  return Promise.resolve();
 };
 
-const emitLocalEvent = (eventName: string, eventData?: Record<string, any>) => {
+const emitLocalEvent = (
+  eventName: string,
+  eventData?: Record<string, any>
+): Promise<void> => {
   if (isLocal) {
     console.log(`Analytics event emitted: ${eventName}`, eventData);
   }
@@ -47,7 +56,7 @@ const emitLocalEvent = (eventName: string, eventData?: Record<string, any>) => {
 export const emitAnalyticsEvent = async (
   eventName: string,
   eventData?: Record<string, any>
-) => {
+): Promise<void> => {
   // fire all emitters concurrently and log any failures
   const tasks = [
     emitGoogleAnalyticsEvent(eventName, eventData),

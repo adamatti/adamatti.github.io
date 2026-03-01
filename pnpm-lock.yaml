@@ -15,8 +15,8 @@ importers:
         specifier: ^1.25.16
         version: 1.25.16(@amplitude/rrweb@2.0.0-alpha.35)(rollup@4.59.0)
       '@next/third-parties':
-        specifier: ^14.2.5
-        version: 14.2.35(next@13.5.11(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.97.3))(react@18.2.0)
+        specifier: ^16.1.6
+        version: 16.1.6(next@13.5.11(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.97.3))(react@18.2.0)
       daisyui:
         specifier: ^2.51.0
         version: 2.52.0(autoprefixer@10.4.27(postcss@8.5.6))(postcss@8.5.6)(yaml@2.8.2)
@@ -682,11 +682,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@next/third-parties@14.2.35':
-    resolution: {integrity: sha512-dG1J+4uYungW1snGViN7tAVyfO0iz0zoB+sqsLMUo8kwR0NED2muLTMbOChmrliHhzOFj6ZpHfkvhy5NJjFvSQ==}
+  '@next/third-parties@16.1.6':
+    resolution: {integrity: sha512-/cLY1egaH529ylSMSK+C8dA3nWDLL4hOFR4fca9OLWWxjcNwzsbuq2pPb/tmdWL9Zj3K1nTjd1pWQoSlaDQ0VA==}
     peerDependencies:
-      next: ^13.0.0 || ^14.0.0
-      react: ^18.2.0
+      next: ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0-beta.0
+      react: ^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2850,7 +2850,7 @@ snapshots:
   '@next/swc-win32-x64-msvc@13.5.9':
     optional: true
 
-  '@next/third-parties@14.2.35(next@13.5.11(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.97.3))(react@18.2.0)':
+  '@next/third-parties@16.1.6(next@13.5.11(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.97.3))(react@18.2.0)':
     dependencies:
       next: 13.5.11(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.97.3)
       react: 18.2.0

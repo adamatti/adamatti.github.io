@@ -16,7 +16,7 @@
   "dependencies": {
     "@amplitude/analytics-browser": "^2.35.4",
     "@amplitude/plugin-session-replay-browser": "^1.25.16",
-    "@next/third-parties": "^14.2.5",
+    "@next/third-parties": "^16.1.6",
     "daisyui": "^2.51.0",
     "date-fns": "^4.1.0",
     "disqus-react": "^1.1.5",
