@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@next/font':
-        specifier: 13.1.6
-        version: 13.1.6
       '@next/third-parties':
         specifier: ^14.2.5
         version: 14.2.35(next@13.5.11(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.97.3))(react@18.2.0)
@@ -549,9 +546,6 @@ packages:
 
   '@next/env@13.5.11':
     resolution: {integrity: sha512-fbb2C7HChgM7CemdCY+y3N1n8pcTKdqtQLbC7/EQtPdLvlMUT9JX/dBYl8MMZAtYG4uVMyPFHXckb68q/NRwqg==}
-
-  '@next/font@13.1.6':
-    resolution: {integrity: sha512-AITjmeb1RgX1HKMCiA39ztx2mxeAyxl4ljv2UoSBUGAbFFMg8MO7YAvjHCgFhD39hL7YTbFjol04e/BPBH5RzQ==}
 
   '@next/swc-darwin-arm64@13.5.9':
     resolution: {integrity: sha512-pVyd8/1y1l5atQRvOaLOvfbmRwefxLhqQOzYo/M7FQ5eaRwA1+wuCn7t39VwEgDd7Aw1+AIWwd+MURXUeXhwDw==}
@@ -2357,8 +2351,6 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.5
 
   '@next/env@13.5.11': {}
-
-  '@next/font@13.1.6': {}
 
   '@next/swc-darwin-arm64@13.5.9':
     optional: true
