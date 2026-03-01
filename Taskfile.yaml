@@ -70,10 +70,18 @@ tasks:
       - task: install
       - pnpm exec biome check --write ./src --diagnostic-level=error
 
+  test:
+    desc: test
+    aliases: [t]
+    cmds:
+      - task: install
+      - nr --silent test
+
   check:
     desc: check
     aliases: [c]
     cmds:
       - task: install
       - task: lint
+      - task: test
       - task: build
