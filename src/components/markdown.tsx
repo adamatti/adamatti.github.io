@@ -51,6 +51,11 @@ export default function Markdown({
       </Head>
       <MarkdownToJSX
         options={{
+          // `tagfilter` was turned on by default in markdown-to-jsx v9 to escape
+          // dangerous HTML tags like <script> and <iframe>. This broke our blog
+          // posts that intentionally embed iframes, so we disable it here. Since
+          // all markdown is authored by me, the security trade-off is acceptable.
+          tagfilter: false,
           overrides: {
             code: SyntaxHighlightedCode,
             a: LinkRenderer,

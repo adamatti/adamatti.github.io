@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import type React from 'react';
+// biome-ignore lint: required by test
+import React from 'react';
 
 type ExternalLinkProps = React.ComponentProps<typeof Link>;
 
