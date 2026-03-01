@@ -22,7 +22,7 @@ export default function ShowProjects({
 
   return (
     <div>
-      <p className="font-bold">Projects:</p>
+      {/*<p className="font-bold">Projects:</p>*/}
       <div>
         {projects.map((p: Project) => {
           return (

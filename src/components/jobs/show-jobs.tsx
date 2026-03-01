@@ -4,7 +4,9 @@ import type { Job } from '~/types';
 import CompanyLogos from './company-logos';
 import ShowProjects from './show-projects';
 
-function JobDates({ job }: { job: Job }): ReactElement {
+const fullFormat = false;
+
+function JobDates({ job }: { job: Job }): ReactElement | string | number {
   const formatString = 'MMM yyyy';
 
   const formatDate = (date: string): string =>
@@ -14,12 +16,20 @@ function JobDates({ job }: { job: Job }): ReactElement {
   const endDate = job.endDate ? parseISO(job.endDate) : new Date();
   const diff = formatDistance(endDate, startDate);
 
-  return (
-    <>
-      {formatDate(job.startDate)} -{' '}
-      {job.endDate ? formatDate(job.endDate) : 'Current'} ({diff})
-    </>
-  );
+  if (fullFormat) {
+    return (
+      <>
+        {formatDate(job.startDate)} -{' '}
+        {job.endDate ? formatDate(job.endDate) : 'Current'} ({diff})
+      </>
+    );
+  }
+
+  if (startDate.getFullYear() === endDate.getFullYear()) {
+    return startDate.getFullYear();
+  }
+
+  return `${startDate.getFullYear()} - ${endDate.getFullYear()}`;
 }
 
 function JobCard({ job }: { job: Job; filter?: string }): ReactElement {
