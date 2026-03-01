@@ -6,10 +6,12 @@ import { useRouter } from 'next/router';
 import { ThemeProvider } from 'next-themes';
 import { type ReactElement, useEffect } from 'react';
 import { hotjar } from 'react-hotjar';
+import { emitAnalyticsEvent } from '~/analytics/analytics';
 import Footer from '~/components/layout/footer';
 import Header from '~/components/layout/header';
 import TailwindHacks from '~/components/layout/tailwind-hacks';
 import { ffUseGoogleAnalytics, ffUseHotjar } from '~/feature-flags';
+import '~/analytics/amplitude';
 
 const title = 'Marcelo Adamatti Portfolio';
 const forceLightModePaths = ['/resume'];
@@ -21,6 +23,7 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
     if (ffUseHotjar) {
       hotjar.initialize({ id: 1_141_202, sv: 6 });
     }
+    emitAnalyticsEvent('page_view', { path: window.location.pathname });
   }, []);
   const { pathname } = useRouter();
   const forcedTheme = forceLightModePaths.includes(pathname)

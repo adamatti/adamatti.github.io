@@ -1,6 +1,7 @@
 import Markdown from 'markdown-to-jsx';
 import Link from 'next/link';
 import type { ReactElement } from 'react';
+import { emitAnalyticsEvent } from '~/analytics/analytics';
 import type { PetProject } from '~/types';
 
 function ShowTags({ project: p }: { project: PetProject }): ReactElement {
@@ -29,6 +30,12 @@ function PetProjectCard({ project: p }: { project: PetProject }): ReactElement {
           <Link
             className="link no-underline hover:underline"
             href={p.url}
+            onClick={() =>
+              emitAnalyticsEvent('pet_project_clicked', {
+                name: p.name,
+                url: p.url,
+              })
+            }
             target="_blank"
           >
             <h2 className="font-bold text-gray-900 text-xl uppercase tracking-tight dark:text-white">

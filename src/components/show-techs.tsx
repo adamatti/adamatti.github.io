@@ -2,6 +2,7 @@
 import hdate from 'human-date';
 import Link from 'next/link';
 import { type ReactElement, useEffect, useState } from 'react';
+import { emitAnalyticsEvent } from '~/analytics/analytics';
 import type { Technology } from '~/types';
 import Image from './next-custom/image';
 
@@ -82,8 +83,10 @@ export default function ShowTechs({
         className={`${filterSelected === label ? 'bg-cyan-600' : 'bg-cyan-400'} ${buttonClass}`}
         onClick={() => {
           if (isShowAll) {
+            emitAnalyticsEvent('filter_techs', { filter: 'all' });
             setFiltered(items);
           } else {
+            emitAnalyticsEvent('filter_techs', { filter: label });
             setFiltered(items.filter((i) => i.tags.includes(label)));
           }
 

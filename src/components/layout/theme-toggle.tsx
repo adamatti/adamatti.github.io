@@ -1,6 +1,7 @@
 import { useTheme } from 'next-themes';
 import { type ReactElement, useEffect, useState } from 'react';
 import { HiMoon, HiSun } from 'react-icons/hi';
+import { emitAnalyticsEvent } from '~/analytics/analytics';
 
 export default function ThemeToggle(): ReactElement | null {
   const { setTheme, resolvedTheme } = useTheme();
@@ -19,7 +20,11 @@ export default function ThemeToggle(): ReactElement | null {
     <button
       aria-label="Toggle Dark Mode"
       className="ml-1 flex h-10 w-10 items-center justify-center rounded-lg p-2 transition-colors hover:bg-gray-100 sm:ml-4 dark:hover:bg-gray-800"
-      onClick={() => setTheme(isDark ? 'light' : 'dark')}
+      onClick={() => {
+        const newTheme = isDark ? 'light' : 'dark';
+        setTheme(newTheme);
+        emitAnalyticsEvent('theme_toggled', { theme: newTheme });
+      }}
       type="button"
     >
       {isDark ? (

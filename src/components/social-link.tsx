@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactElement } from 'react';
+import { emitAnalyticsEvent } from '~/analytics/analytics';
 import Image from './next-custom/image';
 
 export default function SocialLink({
@@ -13,6 +14,9 @@ export default function SocialLink({
     <Link
       className="hover:no-underline"
       href={href}
+      onClick={() =>
+        emitAnalyticsEvent('social_link_clicked', { platform: icon, url: href })
+      }
       rel="noreferrer"
       target="_blank"
     >

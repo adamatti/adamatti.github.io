@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactElement } from 'react';
+import { emitAnalyticsEvent } from '~/analytics/analytics';
 import type { BlogPost } from '~/types';
 import ShowTags from '../blog/show-tags';
 
@@ -10,6 +11,13 @@ function PostCard({ post: p }: { post: BlogPost }): ReactElement {
         aria-label={`Read ${p.title}`}
         className="flex flex-grow flex-col p-6 pb-20 hover:no-underline"
         href={`/blog/posts/${p.slug}`}
+        onClick={() =>
+          emitAnalyticsEvent('blog_post_clicked', {
+            slug: p.slug,
+            title: p.title,
+            source: 'home',
+          })
+        }
       >
         <div className="mb-2">
           <h3 className="font-bold text-xl transition-colors duration-300 group-hover:text-cyan-500">

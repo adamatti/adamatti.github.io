@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactElement } from 'react';
+import { emitAnalyticsEvent } from '~/analytics/analytics';
 import type { Video } from '~/types';
 
 function YoutubeEmbed({ embedId }: { embedId: string }): ReactElement {
@@ -46,6 +47,12 @@ export default function VideoCard({
           <Link
             className="link font-semibold text-sm"
             href={v.url}
+            onClick={() =>
+              emitAnalyticsEvent('video_clicked', {
+                title: v.title,
+                url: v.url,
+              })
+            }
             target="_blank"
           >
             Go to Source

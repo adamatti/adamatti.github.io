@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactElement } from 'react';
+import { emitAnalyticsEvent } from '~/analytics/analytics';
 import type { Company, Job } from '~/types';
 import Image from '../next-custom/image';
 
@@ -23,7 +24,17 @@ export default function CompanyLogos({ job }: { job: Job }): ReactElement {
     <>
       {companies.map((c: Company) => {
         return (
-          <Link href={c.url} key={c.id} target="_blank">
+          <Link
+            href={c.url}
+            key={c.id}
+            onClick={() =>
+              emitAnalyticsEvent('company_link_clicked', {
+                company: c.name,
+                url: c.url,
+              })
+            }
+            target="_blank"
+          >
             <Image
               alt={c.name}
               height={48}

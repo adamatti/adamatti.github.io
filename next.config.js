@@ -14,6 +14,12 @@ const nextConfig = {
     unoptimized: true,
   },
   webpack: (config, { isServer }) => {
+    // support both ~ and @ aliases to mirror tsconfig
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '~': require('path').resolve(__dirname, 'src'),
+    };
+
     if (!isServer) {
       config.resolve.fallback = {
         fs: false,

@@ -18,7 +18,8 @@
                 "useImageSize": "off"
             },
             "performance": {
-                "noAccumulatingSpread": "warn"
+                "noAccumulatingSpread": "warn",
+                "noNamespaceImport": "warn"
             },
             "suspicious": {
                 "noConsole": "off",
@@ -30,7 +31,8 @@
                     "options": {
                         "style": "type"
                     }
-                }
+                },
+                "noExportedImports": "warn"
             }
         }
     }

@@ -1,4 +1,5 @@
 import type { ReactElement } from 'react';
+import { emitAnalyticsEvent } from '~/analytics/analytics';
 import type { EventRecord } from '~/types';
 
 export default function EventCard({
@@ -36,6 +37,13 @@ export default function EventCard({
                 className="link font-semibold text-sm"
                 href={v}
                 key={k}
+                onClick={() =>
+                  emitAnalyticsEvent('event_resource_clicked', {
+                    event: e.name,
+                    resource: k,
+                    url: v,
+                  })
+                }
                 rel="noreferrer"
                 target="_blank"
               >
