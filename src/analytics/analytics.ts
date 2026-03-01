@@ -1,7 +1,9 @@
 import { sendGTMEvent } from '@next/third-parties/google';
+import { hotjar } from 'react-hotjar';
 import {
   ffUseAmplitude,
   ffUseGoogleAnalytics,
+  ffUseHotjar,
   isLocal,
 } from '../feature-flags';
 import amplitude from './amplitude';
@@ -23,13 +25,14 @@ const emitGoogleAnalyticsEvent = (
   return Promise.resolve();
 };
 
-const emitHotjarEvent = async (
+const emitHotjarEvent = (
   eventName: string,
   _eventData?: Record<string, any>
 ): Promise<void> => {
-  if (!isLocal && typeof window !== 'undefined' && (window as any).hj) {
-    await (window as any).hj('event', eventName);
+  if (ffUseHotjar && typeof window !== 'undefined') {
+    hotjar.event(eventName);
   }
+  return Promise.resolve();
 };
 
 const emitAmplitudeEvent = (
