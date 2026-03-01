@@ -18,9 +18,34 @@ tasks:
       - package.json
       - pnpm-lock.yaml
       - pnpm-workspace.yaml
+    status:
+      - test -d node_modules
     cmds:
       - ni
       - pnpm approve-builds
+
+  clean:
+    desc: clean
+    cmds:
+      - rm -rf .next
+      - rm -rf .swc
+      - rm -rf out
+
+  clean:hard:
+    desc: clean hard
+    aliases: [ch]
+    cmds:
+      - task: clean
+      - rm -rf node_modules
+      - rm -rf .task
+
+  deps:update:
+    desc: update dependencies
+    aliases: [du, u]
+    cmds:
+      - task: install
+      # - nup -i
+      - pnpm update --interactive --latest
 
   run:
     desc: Run as dec
