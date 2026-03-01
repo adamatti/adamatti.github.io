@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import type { ReactElement } from 'react';
 import { ffShowFacebook } from '~/feature-flags';
-import avatar from '../../../public/assets/avatar.png';
 import Color from '../color';
 import Image from '../next-custom/image';
 import SocialLink from '../social-link';
@@ -16,7 +15,7 @@ export default function AboutMeSection(): ReactElement {
           alt="Avatar"
           className="object-contain"
           layout="fill"
-          src={avatar}
+          src="/assets/avatar.png"
         />
       </div>
       <div className="section-title">
