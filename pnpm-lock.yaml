@@ -63,8 +63,8 @@ importers:
         specifier: ^6.1.0
         version: 6.3.1
       react-icons:
-        specifier: ^4.7.1
-        version: 4.12.0(react@19.2.4)
+        specifier: ^5.5.0
+        version: 5.5.0(react@19.2.4)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.4.4
@@ -2004,8 +2004,8 @@ packages:
   react-hotjar@6.3.1:
     resolution: {integrity: sha512-EwMqL+ROSlKzatMhT/aqRq7XWWfzlnHynSBSTJh5M2O78mBiPohiSl4Ysls3HOQkkD9y6L22BW0c9bxK2JguwQ==}
 
-  react-icons@4.12.0:
-    resolution: {integrity: sha512-IBaDuHiShdZqmfc/TwHu6+d6k2ltNCf3AszxNmjJc1KUfXdEeRJOKyNvLmAHaarhzGmTSVygNdyu8/opXv2gaw==}
+  react-icons@5.5.0:
+    resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
     peerDependencies:
       react: '*'
 
@@ -4098,7 +4098,7 @@ snapshots:
 
   react-hotjar@6.3.1: {}
 
-  react-icons@4.12.0(react@19.2.4):
+  react-icons@5.5.0(react@19.2.4):
     dependencies:
       react: 19.2.4
 
