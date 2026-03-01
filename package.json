@@ -10,7 +10,8 @@
     "server": "json-graphql-server graphql-server/db.js",
     "test": "vitest run",
     "coverage": "vitest run --coverage",
-    "prepare": "husky"
+    "prepare": "husky",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@next/third-parties": "^14.2.5",

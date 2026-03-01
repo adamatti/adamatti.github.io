@@ -77,11 +77,19 @@ tasks:
       - task: install
       - nr --silent test
 
+  type-check:
+    desc: type-check
+    aliases: [tc]
+    cmds:
+      - task: install
+      - nr --silent type-check
+
   check:
     desc: check
     aliases: [c]
     cmds:
       - task: install
       - task: lint
+      - task: type-check
       - task: test
       - task: build

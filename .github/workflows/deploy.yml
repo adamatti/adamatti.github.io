@@ -30,9 +30,9 @@ jobs:
       - name: Run ${{ matrix.check }}
         run: |
           case "${{ matrix.check }}" in
-            test)       nr test ;;
-            lint)       nr lint ;;
-            type-check) nr type-check ;;
+            test)       nr --silent test ;;
+            lint)       pnpm exec biome check ./src --diagnostic-level=error ;;
+            type-check) nr --silent type-check ;;
           esac
 
   # NOTE: deploy requires resume graphql service
