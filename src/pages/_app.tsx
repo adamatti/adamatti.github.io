@@ -9,6 +9,7 @@ import { hotjar } from 'react-hotjar';
 import Footer from '~/components/layout/footer';
 import Header from '~/components/layout/header';
 import TailwindHacks from '~/components/layout/tailwind-hacks';
+import { ffUseGoogleAnalytics, ffUseHotjar } from '~/feature-flags';
 
 const title = 'Marcelo Adamatti Portfolio';
 const forceLightModePaths = ['/resume'];
@@ -17,7 +18,9 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
   const disableLayout = (Component as any).disableLayout ?? false;
 
   useEffect(() => {
-    hotjar.initialize({ id: 1_141_202, sv: 6 });
+    if (ffUseHotjar) {
+      hotjar.initialize({ id: 1_141_202, sv: 6 });
+    }
   }, []);
   const { pathname } = useRouter();
   const forcedTheme = forceLightModePaths.includes(pathname)
@@ -50,9 +53,7 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
           </div>
         </div>
       </div>
-      {process.env.NODE_ENV === 'production' && (
-        <GoogleTagManager gtmId="G-HRDZ9LVQZW" />
-      )}
+      {ffUseGoogleAnalytics && <GoogleTagManager gtmId="G-HRDZ9LVQZW" />}
     </ThemeProvider>
   );
 }
