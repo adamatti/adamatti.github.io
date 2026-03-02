@@ -14,17 +14,17 @@ clean-hard: clean
 	@rm -rf node_modules
 
 install: ## install dependencies
-	@yarn --silent install
+	@ni
 
 run-dev: ## run as dev
 	@RELEASE_TAG=$(RELEASE_TAG) NEXT_PUBLIC_RELEASE_TAG=$(RELEASE_TAG) \
-		yarn --silent dev
+		nr --silent dev
 
 lint: ## lint
-	@yarn --silent lint --fix
+	@nr --silent lint --fix
 
 build-only: lint
-	@yarn --silent build
+	@nr --silent build
 
 build: clean build-only ## build
 	
@@ -32,7 +32,7 @@ build-prod: clean
 	@RELEASE_TAG=$(RELEASE_TAG) \
 		NEXT_PUBLIC_RELEASE_TAG=$(RELEASE_TAG) \
 		GRAPHQL_SERVER=http://localhost:8889/ \
-		NODE_ENV=production yarn --silent export
+		NODE_ENV=production nr --silent export
 	@touch out/.nojekyll
 
 	@cd ../page-react-deploy; make clean
@@ -43,7 +43,7 @@ release: build-prod ## perform release action
 	@echo "Version $(RELEASE_TAG) released"
 
 test: ## Run tests
-	@yarn --silent test
+	@nr --silent test
 
 coverage: ## Test coverage report
-	@yarn --silent coverage
+	@nr --silent coverage

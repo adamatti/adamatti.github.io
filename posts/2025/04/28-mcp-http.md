@@ -20,7 +20,7 @@ Install it with npm/yarn/pnpm:
 
 # Code
 
-```typescript
+```javascript
 import express, { Request, Response } from "express";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";

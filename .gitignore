@@ -1,3 +1,4 @@
+.task/ 
 /node_modules
 /coverage
 /.next/
@@ -14,3 +15,4 @@ TODO.md
 .env*.local
 *.tsbuildinfo
 
+!Taskfile.yaml

@@ -7,7 +7,7 @@
 }
 
 a, .link {
-  @apply hover:underline color hover:text-cyan-800
+  @apply hover:underline color hover:text-cyan-800 dark:text-cyan-400 dark:hover:text-cyan-300
 }
 
 .section-title {

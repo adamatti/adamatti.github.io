@@ -1,0 +1,66 @@
+name: Verify
+
+on:
+  push:
+
+concurrency:
+  group: verify
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  quality:
+    name: Quality (${{ matrix.check }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        check: [test, lint, type-check]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: jdx/mise-action@v2
+
+      - name: Install dependencies
+        run: nci
+
+      - name: Run ${{ matrix.check }}
+        run: |
+          case "${{ matrix.check }}" in
+            test)       nr --silent test ;;
+            lint)       pnpm exec biome check ./src --diagnostic-level=error ;;
+            type-check) nr --silent type-check ;;
+          esac
+
+  # NOTE: deploy requires resume graphql service
+  # deploy:
+  #   name: Deploy
+  #   needs: quality
+  #   runs-on: ubuntu-latest
+  #
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #
+  #     - uses: jdx/mise-action@v2
+  #
+  #     - name: Install dependencies
+  #       run: nci
+  #
+  #     - name: Build
+  #       env:
+  #         RELEASE_TAG: ${{ github.run_id }}-${{ github.run_attempt }}
+  #         NEXT_PUBLIC_RELEASE_TAG: ${{ github.run_id }}-${{ github.run_attempt }}
+  #       run: |
+  #         nr export
+  #         touch out/.nojekyll
+  #
+  #     - name: Deploy to GitHub Pages
+  #       # peaceiris/actions-gh-pages v4.0.0
+  #       uses: peaceiris/actions-gh-pages@47f197a2200bb9de68ba5f48fad1c088eb1c4a32
+  #       with:
+  #         github_token: ${{ secrets.GITHUB_TOKEN }}
+  #         publish_dir: ./out
+  #         publish_branch: gh-pages

@@ -1,13 +1,22 @@
 import Link from 'next/link';
-import type React from 'react';
+// biome-ignore lint: required by test
+import React from 'react';
+import { emitAnalyticsEvent } from '~/analytics/analytics';
 
 type ExternalLinkProps = React.ComponentProps<typeof Link>;
 
 export default function ExternalLink({
-	className,
-	...props
+  className,
+  ...props
 }: ExternalLinkProps) {
-	return (
-		<Link {...props} target="_blank" className={`external-link ${className}`} />
-	);
+  return (
+    <Link
+      {...props}
+      className={`external-link ${className}`}
+      onClick={() =>
+        emitAnalyticsEvent('external_link_clicked', { url: props.href })
+      }
+      target="_blank"
+    />
+  );
 }

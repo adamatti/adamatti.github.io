@@ -1,14 +1,20 @@
 import Link from 'next/link';
 import type { ReactElement } from 'react';
+import { emitAnalyticsEvent } from '~/analytics/analytics';
+
+const regex = /(http[s]?|mailto):(\/\/)?(?<url>.*)/;
 
 export default function PlainLink({ href }: { href: string }): ReactElement {
-	const regex = /(http[s]?|mailto):(\/\/)?(?<url>.*)/;
+  const label = regex.exec(href)?.groups?.url ?? href;
 
-	const label = regex.exec(href)?.groups?.url ?? href;
-
-	return (
-		<Link href={href} target="_blank" className="link">
-			{label}
-		</Link>
-	);
+  return (
+    <Link
+      className="link"
+      href={href}
+      onClick={() => emitAnalyticsEvent('plain_link_clicked', { url: href })}
+      target="_blank"
+    >
+      {label}
+    </Link>
+  );
 }
