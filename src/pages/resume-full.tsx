@@ -2,8 +2,6 @@ import { ResumePage } from '~/components/resume/resume.page';
 import type { Job, Technology } from '~/types';
 import { query } from '../server/graphql';
 
-const sinceYears = new Date().getFullYear() - 7;
-
 export async function getStaticProps(): Promise<{
   props: { jobs: Job[]; techs: Technology[] };
 }> {
@@ -16,7 +14,7 @@ export async function getStaticProps(): Promise<{
       image
       tags
     }
-    jobs:allJobs(filter: {show: true, startDate_gte: "${sinceYears}"}) {
+    jobs:allJobs {
       id
       title
       description
